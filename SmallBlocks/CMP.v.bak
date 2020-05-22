@@ -1,0 +1,12 @@
+module CMP
+(
+	input [15:0] rddata, rsdata, N, instruction,
+	
+	output reg jump
+
+);
+
+wire [3:0] cond = {instruction[11], instruction[4:2]};
+wire [2:0] cond = instruction[4:2]
+
+reg 

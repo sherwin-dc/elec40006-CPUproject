@@ -1,0 +1,7 @@
+module decoder
+(
+	input [5:0] op,
+	
+	output instr_addr1, instr_addr2, data_addr1, data_addr2, data_wren1, data_wren2
+	
+)

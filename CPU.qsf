@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC7C7F23C8
-set_global_assignment -name TOP_LEVEL_ENTITY Demux16
+set_global_assignment -name TOP_LEVEL_ENTITY test_CMP
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 19.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:41:00  MAY 22, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"
@@ -50,6 +50,17 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name BDF_FILE RegFile/Reg_Level0.bdf
 set_global_assignment -name VERILOG_FILE SmallBlocks/Demux1.v
 set_global_assignment -name VERILOG_FILE SmallBlocks/Demux16.v
+set_global_assignment -name BDF_FILE "Main/Main CPU.bdf"
+set_global_assignment -name QIP_FILE data_ram.qip
+set_global_assignment -name QIP_FILE instr_ram.qip
+set_global_assignment -name QIP_FILE RAM.qip
+set_global_assignment -name VERILOG_FILE Main/decoder.v
+set_global_assignment -name VERILOG_FILE SmallBlocks/adder.v
+set_global_assignment -name VERILOG_FILE SmallBlocks/CMP.v
+set_global_assignment -name VERILOG_FILE Main/ALU.v
+set_global_assignment -name BDF_FILE "testing blocks/test_CMP.bdf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE testing/cmp_test.vwf
+set_global_assignment -name BDF_FILE testing/test_CMP.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

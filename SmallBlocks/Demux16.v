@@ -9,8 +9,8 @@ module Demux16
 wire [15:0] O1;
 wire [15:0] O2;
 
-//assign Out1 = O1;
-//assign Out2 = O2;
+assign Out1 = O1;
+assign Out2 = O2;
 
 always @(*) begin
 	if(Sel==0)
