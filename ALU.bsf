@@ -66,27 +66,6 @@ https://fpgasoftware.intel.com/eula.
 		(text "aluout[15..0]" (rect 141 27 187 39)(font "Arial" ))
 		(line (pt 208 32)(pt 192 32)(line_width 3))
 	)
-	(port
-		(pt 208 48)
-		(output)
-		(text "rd_wen" (rect 0 0 29 12)(font "Arial" ))
-		(text "rd_wen" (rect 158 43 187 55)(font "Arial" ))
-		(line (pt 208 48)(pt 192 48)(line_width 1))
-	)
-	(port
-		(pt 208 64)
-		(output)
-		(text "rs_wen" (rect 0 0 29 12)(font "Arial" ))
-		(text "rs_wen" (rect 158 59 187 71)(font "Arial" ))
-		(line (pt 208 64)(pt 192 64)(line_width 1))
-	)
-	(port
-		(pt 208 80)
-		(output)
-		(text "mux1_sel" (rect 0 0 37 12)(font "Arial" ))
-		(text "mux1_sel" (rect 150 75 187 87)(font "Arial" ))
-		(line (pt 208 80)(pt 192 80)(line_width 1))
-	)
 	(drawing
 		(rectangle (rect 16 16 192 128)(line_width 1))
 	)

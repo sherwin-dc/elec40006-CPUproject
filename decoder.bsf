@@ -21,9 +21,9 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 256 224)
+	(rect 16 16 256 288)
 	(text "decoder" (rect 5 0 36 12)(font "Arial" ))
-	(text "inst" (rect 8 192 20 204)(font "Arial" ))
+	(text "inst" (rect 8 256 20 268)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -136,7 +136,28 @@ https://fpgasoftware.intel.com/eula.
 		(text "data_Wen2" (rect 172 171 219 183)(font "Arial" ))
 		(line (pt 240 176)(pt 224 176)(line_width 1))
 	)
+	(port
+		(pt 240 192)
+		(output)
+		(text "rd_wen" (rect 0 0 29 12)(font "Arial" ))
+		(text "rd_wen" (rect 190 187 219 199)(font "Arial" ))
+		(line (pt 240 192)(pt 224 192)(line_width 1))
+	)
+	(port
+		(pt 240 208)
+		(output)
+		(text "rs_wen" (rect 0 0 29 12)(font "Arial" ))
+		(text "rs_wen" (rect 190 203 219 215)(font "Arial" ))
+		(line (pt 240 208)(pt 224 208)(line_width 1))
+	)
+	(port
+		(pt 240 224)
+		(output)
+		(text "mux1_sel" (rect 0 0 37 12)(font "Arial" ))
+		(text "mux1_sel" (rect 182 219 219 231)(font "Arial" ))
+		(line (pt 240 224)(pt 224 224)(line_width 1))
+	)
 	(drawing
-		(rectangle (rect 16 16 224 192)(line_width 1))
+		(rectangle (rect 16 16 224 256)(line_width 1))
 	)
 )

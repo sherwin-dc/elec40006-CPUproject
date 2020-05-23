@@ -8,12 +8,12 @@ module decoder
 	
 );
 
-	//instructions that decode should take care of:
-	// STP, JMP, CMP, COND JUMPS FOR ADDSUB, SET, PLD, PST, 
-
 	assign instr_addr1 = pc;
 	assign instr_addr2 = pc + 1;
 	
+	assign rs_wen = 0;//only pst 
+	assign mux1_sel = 0;//only pst 
+
 	assign data_addr1 = rddata; //during set
 	assign data_addr2 = rsdata; //during set
 	
