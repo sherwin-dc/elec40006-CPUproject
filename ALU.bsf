@@ -66,20 +66,6 @@ https://fpgasoftware.intel.com/eula.
 		(text "aluout[15..0]" (rect 141 27 187 39)(font "Arial" ))
 		(line (pt 208 32)(pt 192 32)(line_width 3))
 	)
-	(port
-		(pt 208 48)
-		(output)
-		(text "Rd_Wen" (rect 0 0 38 12)(font "Arial" ))
-		(text "Rd_Wen" (rect 149 43 187 55)(font "Arial" ))
-		(line (pt 208 48)(pt 192 48)(line_width 1))
-	)
-	(port
-		(pt 208 64)
-		(output)
-		(text "Rs_Wen" (rect 0 0 38 12)(font "Arial" ))
-		(text "Rs_Wen" (rect 149 59 187 71)(font "Arial" ))
-		(line (pt 208 64)(pt 192 64)(line_width 1))
-	)
 	(drawing
 		(rectangle (rect 16 16 192 128)(line_width 1))
 	)

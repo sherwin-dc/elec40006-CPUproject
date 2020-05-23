@@ -2,9 +2,7 @@ module ALU
 (
 	input [15:0] rddata, rsdata, rmdata, N, instruction,
 	
-	output [15:0] aluout,
-	output Rd_Wen, Rs_Wen
-
+	output [15:0] aluout
 );
 
 
