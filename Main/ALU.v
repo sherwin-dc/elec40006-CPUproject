@@ -2,9 +2,7 @@ module ALU
 (
 	input [15:0] rddata, rsdata, rmdata, N, instruction,
 	
-	output [15:0] aluout,
-	output Rd_Wen, Rs_Wen
-
+	output [15:0] aluout
 );
 
 
@@ -15,6 +13,8 @@ wire [2:0] Rd = instruction[10:8];
 reg [15:0] alusum;
 
 assign aluout = alusum;
+assign rs_wen = 0;//pst instruction
+assign mux1_sel = 0;//pst instruction
 
 always @(*)
 	begin 
