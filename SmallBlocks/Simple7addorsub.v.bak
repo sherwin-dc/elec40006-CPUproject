@@ -1,0 +1,18 @@
+module simple7addorsub
+(
+input [6:0] A, B,
+output res,
+input sub
+);
+
+reg [6:0] result;
+always @(*) begin
+
+	if (sub)
+		result = A - B;
+	else
+		result = A + B;
+
+end
+
+endmodule

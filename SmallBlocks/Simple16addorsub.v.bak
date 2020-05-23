@@ -1,0 +1,9 @@
+module simple16addorsub
+(
+input [15:0] A, B,
+output res
+);
+
+assign res = A + B;
+
+endmodule

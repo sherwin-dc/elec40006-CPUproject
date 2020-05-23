@@ -1,0 +1,9 @@
+module simple7adder
+(
+input [6:0] A, B,
+output res
+);
+
+assign res = A + B;
+
+endmodule
