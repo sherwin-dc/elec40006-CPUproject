@@ -54,6 +54,17 @@ set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name BDF_FILE RegFile/Reg_Level0.bdf
 set_global_assignment -name VERILOG_FILE SmallBlocks/Demux1.v
 set_global_assignment -name VERILOG_FILE SmallBlocks/Demux16.v
+set_global_assignment -name BDF_FILE "Main/Main CPU.bdf"
+set_global_assignment -name QIP_FILE data_ram.qip
+set_global_assignment -name QIP_FILE instr_ram.qip
+set_global_assignment -name QIP_FILE RAM.qip
+set_global_assignment -name VERILOG_FILE Main/decoder.v
+set_global_assignment -name VERILOG_FILE SmallBlocks/adder.v
+set_global_assignment -name VERILOG_FILE SmallBlocks/CMP.v
+set_global_assignment -name VERILOG_FILE Main/ALU.v
+set_global_assignment -name BDF_FILE "testing blocks/test_CMP.bdf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE testing/cmp_test.vwf
+set_global_assignment -name BDF_FILE testing/test_CMP.bdf
 set_global_assignment -name VERILOG_FILE RegFile/Reg_Data_Writer.v
 set_global_assignment -name VERILOG_FILE RegFile/Reg128.v
 set_global_assignment -name BDF_FILE RegisterStack.bdf

@@ -1,0 +1,7 @@
+module adder
+(
+	input [15:0] Rd, Rs, Rm, N
+	
+	output [15:0] dataOut
+);
+
