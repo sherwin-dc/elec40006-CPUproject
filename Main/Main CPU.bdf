@@ -22,19 +22,19 @@ https://fpgasoftware.intel.com/eula.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 32 40 200 56)
-	(text "INPUT" (rect 125 0 161 13)(font "Arial" (font_size 6)))
-	(text "clock" (rect 5 0 34 14)(font "Arial" ))
-	(pt 168 8)
+	(rect 32 40 208 56)
+	(text "INPUT" (rect 133 0 169 13)(font "Arial" (font_size 6)))
+	(text "clock" (rect 9 0 38 14)(font "Arial" ))
+	(pt 176 8)
 	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
 	)
-	(text "VCC" (rect 128 7 152 20)(font "Arial" (font_size 6)))
+	(text "VCC" (rect 136 7 160 20)(font "Arial" (font_size 6)))
 )
 (symbol
 	(rect 1168 200 1424 384)
@@ -87,21 +87,21 @@ https://fpgasoftware.intel.com/eula.
 		(input)
 		(text "clock" (rect 0 0 36 16)(font "Arial" (font_size 8)))
 		(text "clock" (rect 4 144 40 160)(font "Arial" (font_size 8)))
-		(line (pt 0 160)(pt 176 160))
+		(line (pt 0 160)(pt 104 160))
 	)
 	(port
 		(pt 256 32)
 		(output)
 		(text "q_a[15..0]" (rect 0 0 68 16)(font "Arial" (font_size 8)))
 		(text "q_a[15..0]" (rect 195 16 263 32)(font "Arial" (font_size 8)))
-		(line (pt 256 32)(pt 192 32)(line_width 3))
+		(line (pt 256 32)(pt 168 32)(line_width 3))
 	)
 	(port
 		(pt 256 96)
 		(output)
 		(text "q_b[15..0]" (rect 0 0 68 16)(font "Arial" (font_size 8)))
 		(text "q_b[15..0]" (rect 195 80 263 96)(font "Arial" (font_size 8)))
-		(line (pt 256 96)(pt 192 96)(line_width 3))
+		(line (pt 256 96)(pt 168 96)(line_width 3))
 	)
 	(drawing
 		(text "65536 Word(s)" (rect 135 47 149 133)(font "Arial" )(vertical))
@@ -160,23 +160,6 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 104 132)(pt 112 132))
 		(line (pt 120 128)(pt 128 128))
 		(line (pt 104 36)(pt 104 161))
-		(line (pt 176 36)(pt 176 161))
-		(line (pt 184 27)(pt 192 27))
-		(line (pt 192 27)(pt 192 39))
-		(line (pt 192 39)(pt 184 39))
-		(line (pt 184 39)(pt 184 27))
-		(line (pt 184 34)(pt 186 36))
-		(line (pt 186 36)(pt 184 38))
-		(line (pt 176 36)(pt 184 36))
-		(line (pt 168 32)(pt 184 32)(line_width 3))
-		(line (pt 184 91)(pt 192 91))
-		(line (pt 192 91)(pt 192 103))
-		(line (pt 192 103)(pt 184 103))
-		(line (pt 184 103)(pt 184 91))
-		(line (pt 184 98)(pt 186 100))
-		(line (pt 186 100)(pt 184 102))
-		(line (pt 176 100)(pt 184 100))
-		(line (pt 168 96)(pt 184 96)(line_width 3))
 		(line (pt 0 0)(pt 257 0))
 		(line (pt 257 0)(pt 257 186))
 		(line (pt 0 186)(pt 257 186))
@@ -209,11 +192,32 @@ https://fpgasoftware.intel.com/eula.
 	(text "LPM_COUNTER" (rect 20 0 172 18)(font "Arial" (font_size 10)))
 	(text "PC" (rect 3 189 24 205)(font "Arial" (font_size 8)))
 	(port
-		(pt 72 200)
+		(pt 0 48)
 		(input)
-		(text "aclr" (rect 64 167 80 191)(font "Arial" (font_size 8))(vertical))
-		(text "aclr" (rect 64 152 80 176)(font "Arial" (font_size 8))(vertical))
-		(line (pt 72 200)(pt 72 184))
+		(text "sload" (rect 20 41 56 57)(font "Arial" (font_size 8)))
+		(text "sload" (rect 20 41 56 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "data[LPM_WIDTH-1..0]" (rect 20 89 178 105)(font "Arial" (font_size 8)))
+		(text "data[]" (rect 20 73 58 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "clock" (rect 27 106 63 122)(font "Arial" (font_size 8))(invisible))
+		(text "clock" (rect 27 122 63 138)(font "Arial" (font_size 8))(invisible))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "clk_en" (rect 20 121 64 137)(font "Arial" (font_size 8)))
+		(text "clk_en" (rect 20 137 64 153)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
 		(unused)
 	)
 	(port
@@ -222,6 +226,14 @@ https://fpgasoftware.intel.com/eula.
 		(text "aload" (rect 80 158 96 194)(font "Arial" (font_size 8))(vertical))
 		(text "aload" (rect 80 144 96 180)(font "Arial" (font_size 8))(vertical))
 		(line (pt 88 200)(pt 88 184))
+		(unused)
+	)
+	(port
+		(pt 72 200)
+		(input)
+		(text "aclr" (rect 64 167 80 191)(font "Arial" (font_size 8))(vertical))
+		(text "aclr" (rect 64 152 80 176)(font "Arial" (font_size 8))(vertical))
+		(line (pt 72 200)(pt 72 184))
 		(unused)
 	)
 	(port
@@ -241,50 +253,6 @@ https://fpgasoftware.intel.com/eula.
 		(unused)
 	)
 	(port
-		(pt 0 144)
-		(input)
-		(text "clk_en" (rect 20 121 64 137)(font "Arial" (font_size 8)))
-		(text "clk_en" (rect 20 137 64 153)(font "Arial" (font_size 8)))
-		(line (pt 0 144)(pt 16 144))
-		(unused)
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "clock" (rect 27 106 63 122)(font "Arial" (font_size 8))(invisible))
-		(text "clock" (rect 27 122 63 138)(font "Arial" (font_size 8))(invisible))
-		(line (pt 0 128)(pt 16 128))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "cnt_en" (rect 20 137 66 153)(font "Arial" (font_size 8)))
-		(text "cnt_en" (rect 20 153 66 169)(font "Arial" (font_size 8)))
-		(line (pt 0 160)(pt 16 160))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "data[LPM_WIDTH-1..0]" (rect 20 89 178 105)(font "Arial" (font_size 8)))
-		(text "data[]" (rect 20 73 58 89)(font "Arial" (font_size 8)))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 32)
-		(input)
-		(text "sclr" (rect 20 25 44 41)(font "Arial" (font_size 8)))
-		(text "sclr" (rect 20 25 44 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-		(unused)
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "sload" (rect 20 41 56 57)(font "Arial" (font_size 8)))
-		(text "sload" (rect 20 41 56 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
 		(pt 0 64)
 		(input)
 		(text "sset" (rect 20 57 49 73)(font "Arial" (font_size 8)))
@@ -301,11 +269,18 @@ https://fpgasoftware.intel.com/eula.
 		(unused)
 	)
 	(port
-		(pt 136 112)
-		(output)
-		(text "cout" (rect 88 120 117 136)(font "Arial" (font_size 8)))
-		(text "cout" (rect 96 104 125 120)(font "Arial" (font_size 8)))
-		(line (pt 136 112)(pt 120 112))
+		(pt 0 160)
+		(input)
+		(text "cnt_en" (rect 20 137 66 153)(font "Arial" (font_size 8)))
+		(text "cnt_en" (rect 20 153 66 169)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "sclr" (rect 20 25 44 41)(font "Arial" (font_size 8)))
+		(text "sclr" (rect 20 25 44 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
 		(unused)
 	)
 	(port
@@ -315,11 +290,44 @@ https://fpgasoftware.intel.com/eula.
 		(text "q[]" (rect 105 89 122 105)(font "Arial" (font_size 8)))
 		(line (pt 120 96)(pt 136 96)(line_width 3))
 	)
+	(port
+		(pt 136 112)
+		(output)
+		(text "cout" (rect 88 120 117 136)(font "Arial" (font_size 8)))
+		(text "cout" (rect 96 104 125 120)(font "Arial" (font_size 8)))
+		(line (pt 136 112)(pt 120 112))
+		(unused)
+	)
+	(parameter
+		"LPM_SVALUE"
+		""
+		"Unsigned value associated with the sset port"
+	)
+	(parameter
+		"LPM_AVALUE"
+		""
+		"Unsigned value associated with the aset port"
+	)
+	(parameter
+		"LPM_MODULUS"
+		""
+		"Optional counter wrap value"
+	)
+	(parameter
+		"LPM_DIRECTION"
+		""
+		"Selects between up/down, up, or down (\"DEFAULT\" \"UP\" \"DOWN\")"
+	)
 	(parameter
 		"LPM_WIDTH"
 		"16"
 		"Width of I/O, any integer > 0"
 		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LPM_PORT_UPDOWN"
+		""
+		"Condition of the up/down port (\"PORT_CONNECTIVITY\" \"PORT_USED\" \"PORT_UNUSED\")"
+	)
 	(drawing
 		(line (pt 16 184)(pt 120 184))
 		(line (pt 16 16)(pt 120 16))
@@ -381,21 +389,21 @@ https://fpgasoftware.intel.com/eula.
 		(input)
 		(text "clock" (rect 0 0 36 16)(font "Arial" (font_size 8)))
 		(text "clock" (rect 4 144 40 160)(font "Arial" (font_size 8)))
-		(line (pt 0 160)(pt 176 160))
+		(line (pt 0 160)(pt 104 160))
 	)
 	(port
 		(pt 256 32)
 		(output)
 		(text "q_a[15..0]" (rect 0 0 68 16)(font "Arial" (font_size 8)))
 		(text "q_a[15..0]" (rect 195 16 263 32)(font "Arial" (font_size 8)))
-		(line (pt 256 32)(pt 192 32)(line_width 3))
+		(line (pt 256 32)(pt 168 32)(line_width 3))
 	)
 	(port
 		(pt 256 96)
 		(output)
 		(text "q_b[15..0]" (rect 0 0 68 16)(font "Arial" (font_size 8)))
 		(text "q_b[15..0]" (rect 195 80 263 96)(font "Arial" (font_size 8)))
-		(line (pt 256 96)(pt 192 96)(line_width 3))
+		(line (pt 256 96)(pt 168 96)(line_width 3))
 	)
 	(drawing
 		(text "65536 Word(s)" (rect 135 47 149 133)(font "Arial" )(vertical))
@@ -454,23 +462,6 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 104 132)(pt 112 132))
 		(line (pt 120 128)(pt 128 128))
 		(line (pt 104 36)(pt 104 161))
-		(line (pt 176 36)(pt 176 161))
-		(line (pt 184 27)(pt 192 27))
-		(line (pt 192 27)(pt 192 39))
-		(line (pt 192 39)(pt 184 39))
-		(line (pt 184 39)(pt 184 27))
-		(line (pt 184 34)(pt 186 36))
-		(line (pt 186 36)(pt 184 38))
-		(line (pt 176 36)(pt 184 36))
-		(line (pt 168 32)(pt 184 32)(line_width 3))
-		(line (pt 184 91)(pt 192 91))
-		(line (pt 192 91)(pt 192 103))
-		(line (pt 192 103)(pt 184 103))
-		(line (pt 184 103)(pt 184 91))
-		(line (pt 184 98)(pt 186 100))
-		(line (pt 186 100)(pt 184 102))
-		(line (pt 176 100)(pt 184 100))
-		(line (pt 168 96)(pt 184 96)(line_width 3))
 		(line (pt 0 0)(pt 257 0))
 		(line (pt 257 0)(pt 257 186))
 		(line (pt 0 186)(pt 257 186))
@@ -484,7 +475,7 @@ https://fpgasoftware.intel.com/eula.
 (symbol
 	(rect -944 624 -832 712)
 	(text "BUSMUX" (rect 28 0 115 18)(font "Arial" (font_size 10)))
-	(text "MUX1" (rect 3 77 39 96)(font "Intel Clear" ))
+	(text "MUX1" (rect 3 77 43 93)(font "Arial" (font_size 8)))
 	(port
 		(pt 0 64)
 		(input)
@@ -510,7 +501,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 112 48)
 		(output)
 		(text "result[WIDTH-1..0]" (rect 75 35 201 51)(font "Arial" (font_size 8)))
-		(text "result[]" (rect 75 35 122 51)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 75 35 114 51)(font "Arial" (font_size 8)))
 		(line (pt 68 48)(pt 112 48)(line_width 3))
 	)
 	(parameter
@@ -565,7 +556,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 176 32)
 		(output)
 		(text "jump" (rect 0 0 25 14)(font "Arial" ))
-		(text "jump" (rect 134 27 159 41)(font "Arial" ))
+		(text "jump" (rect 134 27 155 41)(font "Arial" ))
 		(line (pt 176 32)(pt 160 32))
 	)
 	(drawing
@@ -901,12 +892,6 @@ https://fpgasoftware.intel.com/eula.
 	(text "clock" (rect 1114 592 1143 611)(font "Intel Clear" ))
 	(pt 1168 608)
 	(pt 1112 608)
-)
-(connector
-	(text "clock" (rect 210 24 239 43)(font "Intel Clear" ))
-	(pt 200 48)
-	(pt 272 48)
-	(color 222 222 0)
 )
 (connector
 	(pt 1736 232)
@@ -1401,8 +1386,20 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 	(color 222 222 0)
 )
+(connector
+	(pt 200 48)
+	(pt 208 48)
+	(color 222 222 0)
+)
+(connector
+	(text "clock" (rect 210 24 239 43)(font "Intel Clear" ))
+	(pt 208 48)
+	(pt 272 48)
+	(color 222 222 0)
+)
 (junction (pt -264 536))
 (junction (pt 400 896))
 (junction (pt 424 856))
 (junction (pt -368 200))
 (junction (pt -392 216))
+(junction (pt 208 48))
