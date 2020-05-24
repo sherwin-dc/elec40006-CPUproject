@@ -186,7 +186,7 @@ void synthesizer::CALL()  {
   int offset;
   try {
     offset=stoi(tmp[4]);
-    if(offset>8)  {
+    if(offset>7)  {
       cerr<<"Window offset exceeds window range in CALL at line "<<tmp[0]<<endl;
       exit(1);
     }
@@ -195,7 +195,7 @@ void synthesizer::CALL()  {
     cerr<<"Syntax Error for CALL at line "<<tmp[0]<<" , Invalid offset value"<<endl;
     exit(1);
   }
-  instr=(opcodeh<<12)+(tir<<11)+(rd<<8)+(offset<<4);
+  instr=(opcodeh<<12)+(tir<<11)+(rd<<8)+(offset<<5);
   instrWord=to_string(instr);
   appendObjCode(instrWord);
   appendObjCode(tmp[3]);
@@ -227,7 +227,7 @@ void synthesizer::RTN() {
   int offset;
   try {
     offset=stoi(tmp[3]);
-    if(offset>8)  {
+    if(offset>7)  {
       cerr<<"Window offset exceeds window range in RTN at line "<<tmp[0]<<endl;
       exit(1);
     }
@@ -236,7 +236,7 @@ void synthesizer::RTN() {
     cerr<<"Syntax Error for RTN at line "<<tmp[0]<<" , Invalid offset value"<<endl;
     exit(1);
   }
-  instr=(opcodeh<<12)+(tir<<11)+(rd<<8)+(offset<<4);
+  instr=(opcodeh<<12)+(tir<<11)+(rd<<8)+(offset<<5);
   instrWord=to_string(instr);
   appendObjCode(instrWord);
   return;
