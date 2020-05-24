@@ -21,6 +21,7 @@ always @(*)
 			4'b0010 : result = rddata == rsdata ? 1'b1 : 1'b0;
 			4'b0011 : result = rddata != rsdata ? 1'b1 : 1'b0;
 			4'b0100 : result = rddata == 0 ? 1'b1 : 1'b0;
+			4'b0101 : result = rddata[15] == 1 ? 1'b1 : 1'b0;
 			4'b1000 : result = rddata > N ? 1'b1 : 1'b0;
 			4'b1001 : result = rddata < N ? 1'b1 : 1'b0;
 			4'b1010 : result = rddata == N ? 1'b1 : 1'b0;
