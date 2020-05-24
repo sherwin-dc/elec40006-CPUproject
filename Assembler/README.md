@@ -9,6 +9,6 @@ The assembler will take in an assembly file and generate a MIF file. It can be u
 
 MIF file output will be assembly.mif
 
-optional -o- argument to specify the name of the output file
+optional -o argument to specify the name of the output file
 
 > candybar assembly.s -o myfile.mif

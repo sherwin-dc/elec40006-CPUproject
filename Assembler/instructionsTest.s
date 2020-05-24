@@ -2,6 +2,8 @@ start:
 MOV R1 #3
 MOV R5 R1
 ADD R0 R1 R2  //this is a comment
+ADD R0 r1 #3
+
 SUB r1 r4 r5
 SUB R1 R4 #523 J 1
 
