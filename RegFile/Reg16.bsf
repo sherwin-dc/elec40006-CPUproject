@@ -27,22 +27,22 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 32)
 		(input)
-		(text "Rd_Addr[6..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "Rd_Addr[6..0]" (rect 21 27 81 39)(font "Arial" ))
+		(text "Rd_Addr[3..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "Rd_Addr[3..0]" (rect 21 27 81 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "Rs_Addr[6..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "Rs_Addr[6..0]" (rect 21 43 81 55)(font "Arial" ))
+		(text "Rs_Addr[3..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "Rs_Addr[3..0]" (rect 21 43 81 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "Rm_Addr[6..0]" (rect 0 0 63 12)(font "Arial" ))
-		(text "Rm_Addr[6..0]" (rect 21 59 84 71)(font "Arial" ))
+		(text "Rm_Addr[3..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "Rm_Addr[3..0]" (rect 21 59 84 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
