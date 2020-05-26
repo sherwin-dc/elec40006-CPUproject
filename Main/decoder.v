@@ -4,7 +4,7 @@ module decoder
 	input jump,
 	
 	output reg [15:0] data_addr1, data_addr2, new_pc,
-	output [15:0] instr_addr1, instr_addr2, 
+	output reg [15:0] instr_addr1, instr_addr2, 
 	output reg cnt_en, instr_Wen2, data_wen1, data_wen2, rd_wen, rs_wen, mux1_sel,
 	output pc_sload
 );
@@ -40,8 +40,8 @@ always @(*)
 					end 
 		4'b0010: begin // JMP
 						cnt_en = 0;
-						new_pc = (rddata & !type) + (N & type) + 1
-						instr_addr1 = (rddata & !type) + (N & type)
+						new_pc = (rddata & !type) + (N & type) + 1;
+						instr_addr1 = (rddata & !type) + (N & type);
 					end
 		4'b0100: begin // AND
 						rd_wen = 1;
@@ -64,10 +64,11 @@ always @(*)
 						data_wen2 = instr[2];						
 					end
 		4'b1011: begin // SET 
+					end
 						
 		
 		default: cnt_en = 1;
-		endcase;	
+		endcase	
 	end
 
 // if type I instruction should always set new PC value to +2
@@ -82,8 +83,8 @@ always @(type, pc)
 
 endmodule
 
-	assign instr_addr1 = pc;
-	assign instr_addr2 = pc + 1;
+//	assign instr_addr1 = pc;
+//	assign instr_addr2 = pc + 1;
 
 //	assign rs_wen = 0; //only pst 
 //	assign mux1_sel = 0; //only pst 
