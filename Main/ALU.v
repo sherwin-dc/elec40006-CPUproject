@@ -21,10 +21,10 @@ always @(*)
 			3'b010 : alusum = rsdata - rmdata; // SUB R
 			3'b011 : alusum = rsdata - N; // SUB I
 			3'b100 : alusum = {rsdata[14:0], 1'b0}; // LSL
-			3'b110 : alusum = {1'b0, rsdata[15:1]}; // LSR (possibly ASR implementation as well)
+			3'b110 : alusum = {1'b0, rsdata[15:1]}; // LSR
 					
 			default : alusum = 0;
-		endcase;
+		endcase
 	end
 	
 endmodule
