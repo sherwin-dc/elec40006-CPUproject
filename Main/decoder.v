@@ -3,99 +3,395 @@ module decoder
 	input [15:0] instr, N, pc, rddata, rsdata,
 	input jump,
 	
-	output reg [15:0] data_addr1, data_addr2, new_pc,
-	output reg [15:0] instr_addr1, instr_addr2, 
-	output reg cnt_en, instr_Wen2, data_wen1, data_wen2, rd_wen, rs_wen, mux1_sel,
-	output pc_sload
+	output reg [15:0] instr_addr1, instr_addr2, data_addr1, data_addr2, new_pc,
+	output reg [2:0] giantmux_sel,
+	output instr_wen2, data_wen1, data_wen2, rd_wen, rs_wen, move_fp, push_up, cnt_en, pc_sload, rsmux_sel
 );
 
-wire [3:0]op = instr[15:12];
-wire type = instr[11];
+wire [10:0] i = {instr[15:11], instr[4:0], jump}; // wire for inputs
+reg [8:0] o;
 
-//		STP 	11111
-//		CAL   00001
-//		RTN	11100
-//		LSL	11000
-//		LSR	11010
-//		CMP	0001x
-//		JMP	0010x
-//		ADD	0100x
-//		SUB	0101x
-//		MAS	0110x
-//		MOV	0111x
-//		SET	1011x
-//		PLD	10000
-//		PST	10010
-//		NOP	00000
-
-wire cmp = !instr[15] & !instr[14] & !instr[13] & instr[12];
-wire jmp = !instr[15] & !instr[14] & instr[13] & !instr[12];
+assign {instr_wen2, data_wen1, data_wen2, rd_wen, rs_wen, move_fp, push_up, cnt_en, rsmux_sel} = o;
 
 always @(*)
 	begin
-		case (op)
-		4'b0001: begin // CMP
-						new_pc = (pc + 1 + instr[1:0]) & jump; // skiplen = instr[1:0]
-						cnt_en = !jump;
-					end 
-		4'b0010: begin // JMP
-						cnt_en = 0;
-						new_pc = (rddata & !type) + (N & type) + 1;
-						instr_addr1 = (rddata & !type) + (N & type);
-					end
-		4'b0100: begin // AND
-						rd_wen = 1;
-					end 
-		4'b0101: begin // SUB
-						rd_wen = 1;
-					end
-		4'b0110: begin // MAS 
-						rd_wen = 1;
-					end
-		4'b0111: begin // MOV
-						rd_wen = 1;
-					end
-		4'b1000: begin // PLD
-						rd_wen = instr[3];
-						rs_wen = instr[2];
-					end
-		4'b1001: begin // PST
-						data_wen1 = instr[3];
-						data_wen2 = instr[2];						
-					end
-		4'b1011: begin // SET 
-					end
-						
-		
-		default: cnt_en = 1;
+		case (i)
+		11'b00000xxxxxx: // NOP
+		begin 
+			o = 9'b00000001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+		end
+
+		11'b00001xxxxxx: // CALL
+		begin 
+			o = 9'b00010100x;
+			giantmux_sel = 3'b001; // PC
+			instr_addr1 = N;
+			instr_addr2 = N + 1;
+			new_pc = N + 1;
+		end
+
+		11'b11100xxxxxx: // RTN
+		begin
+			o = 9'b00000110x;
+			instr_addr1 = rddata;
+			instr_addr2 = rddata + 1;
+			new_pc = rddata + 1;
+		end
+
+		11'b11000xxxxxx: // LSL
+		begin
+			o = 9'b00010001x;
+			giantmux_sel = 3'b100; // aluout
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+		end 
+
+		11'b11010xxxxxx: // LSR
+		begin
+			o = 9'b00010001x;
+			giantmux_sel = 3'b100; // aluout
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+		end 
+
+		11'b0001xxxxxx0: // failed CMP 
+		begin 
+			o = 9'b00000001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+		end
+
+		11'b0001xxxxxx1: // CMP passed 
+		begin
+			o = 9'b00000000x;
+			instr_addr1 = pc + instr[1:0]; // is this allowed? or will this work?
+			instr_addr2 = pc + instr[1:0] + 1; 
+			new_pc = pc + instr[1:0] + 1;
+		end 
+
+		11'b00100xxxxxx: // JMP R
+		begin
+			o = 9'b00000000x;
+			instr_addr1 = rddata;
+			instr_addr2 = rddata + 1;
+			new_pc = rddata + 1;
+		end 
+
+		11'b00101xxxxxx: // JMP I
+		begin
+			o = 9'b00000000x;
+			instr_addr1 = N;
+			instr_addr2 = N + 1;
+			new_pc = N + 1;
+		end 
+
+		11'b01000xxxxxx: // ADD R
+		begin
+			o = 9'b00010001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 3'b100; // aluout
+		end 
+
+		11'b01001xxxxxx: // ADD I
+		begin
+			o = 9'b00010000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			giantmux_sel = 100; // aluout
+		end 
+
+		11'b01010xxx0xx: // SUB R, no jump cond 
+		begin 
+			o = 9'b00010001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 3'b100; // aluout
+		end 
+
+		11'b01010xxx1x0: // SUB R, jump cond failed
+		begin 
+			o = 9'b00010001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 3'b100; // aluout
+		end
+
+		11'b01010xxx101: // SUB R, jump passed, next instruction R
+		begin
+			o = 9'b00010000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			giantmux_sel = 100; // aluout
+		end 
+
+		11'b01010xxx111: // SUB R, jump passed, next instruction I
+		begin 
+			o = 9'b00010000x;
+			instr_addr1 = pc + 2;
+			instr_addr2 = pc + 3;
+			new_pc = pc + 3;
+			giantmux_sel = 100; // aluout
+		end 
+
+		11'b01011xxx0xx: // SUB I, no jump cond
+		begin
+			o = 9'b00010000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			giantmux_sel = 100; // aluout
+		end 
+
+		11'b01011xxx1x0: // SUB I, jump cond failed
+		begin
+			o = 9'b00010000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			giantmux_sel = 100; // aluout
+		end 
+
+		11'b01011xxx101: // SUB I, jump passed, next instruction R
+		begin 
+			o = 9'b00010000x;
+			instr_addr1 = pc + 2;
+			instr_addr2 = pc + 3;
+			new_pc = pc + 3;
+			giantmux_sel = 100; // aluout
+		end 
+
+		11'b01011xxx111: // SUB I, jump passed, next instruction I
+		begin
+			o = 9'b00010000x;
+			instr_addr1 = pc + 3;
+			instr_addr2 = pc + 4;
+			new_pc = pc + 4;
+			giantmux_sel = 100; // aluout
+		end 
+
+		11'b0110xxxxxx: // MAS R
+		begin 
+			o = 9'b00010001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 101; // masout
+		end 
+
+		11'b01101xxxxxx: // MAS I
+		begin 
+			o = 9'b00010000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			giantmux_sel = 101; // masout
+		end 
+
+		11'b01110xxxxxx: // MOV R
+		begin 
+			o = 9'b00010001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 000; // rsdata
+		end
+
+		11'b01111xxxxxx: // MOV I
+		begin 
+			o = 9'b00010000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			giantmux_sel = 011; // N
+		end
+
+		11'b11111xxxxxx: // STP
+		begin
+			o = 9'b00000000x;
+			instr_addr1 = pc - 1;
+			instr_addr2 = pc;
+		end
+
+		11'b10110001xxx: // SET R, data, set B only
+		begin 
+			o = 9'b00000001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			data_addr2 = rsdata;
+		end
+
+		11'b10110010xxx: // SET R, data, set A only
+		begin 
+			o = 9'b00000001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			data_addr1 = rddata;
+		end
+
+		11'b10110011xxx: // SET R, data, set A & B
+		begin 
+			o = 9'b00000001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			data_addr1 = rddata;
+			data_addr2 = rsdata;
+		end
+
+		11'b101101x1xxx: // SET R, instruction, set B only
+		begin 
+			o = 9'b00000001x;
+			instr_addr1 = pc;
+			instr_addr2 = rsdata;
+		end
+
+		11'b1011100100x: // SET I, data, set B, no offset
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			data_addr2 = rsdata;
+		end
+
+		11'b1011101000x: // SET I, data, set A, no offset
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			data_addr1 = N;
+		end
+
+		11'b1011101100x: // SET I, data, set A & B, no offset
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			data_addr1 = N;
+			data_addr2 = rsdata;
+		end
+
+		11'b10111001x1x: // SET I, data, set B, offset
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			data_addr2 = rsdata + N;
+		end
+
+		11'b101110101xx: // SET I, data, set A, offset
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			data_addr1 = rddata + N;
+		end
+
+		11'b1011101110x: // SET I, data, set A & B, offset A
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			data_addr1 = rddata + N;
+			data_addr2 = rsdata;
+		end
+
+		11'b1011101110x: // SET I, data, set A & B, offset B
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			data_addr1 = rddata;
+			data_addr2 = rsdata + N;
+		end
+
+		11'b1011101110x: // SET I, data, set A & B, offset both
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = pc + 2;
+			new_pc = pc + 2;
+			data_addr1 = rddata + N;
+			data_addr2 = rsdata + N;
+		end
+
+		11'b101111x100x: // SET I, instruction, set B, no offset
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = rsdata;
+			new_pc = pc + 2;
+		end
+
+		11'b101111x1x1x: // SET I, instruction, set B, offset
+		begin 
+			o = 9'b00000000x;
+			instr_addr1 = pc + 1;
+			instr_addr2 = rsdata + N;
+			new_pc = pc + 2;
+		end
+
+		11'b10000001xxx: // PLD B, data
+		begin 
+			o = 9'b000010010;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+		end
+
+		11'b10000010xxx: // PLD A, data
+		begin 
+			o = 9'b00010001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 3'b110; // data_out1
+		end
+
+		11'b10000011xxx: // PLD A & B, data
+		begin 
+			o = 9'b000110010;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 3'b110; // data_out1
+		end
+
+		11'b10000101xxx: // PLD B, instruction
+		begin 
+			o = 9'b000010011;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+		end
+
+		11'b10000110xxx: // PLD A, instruction
+		begin 
+			o = 9'b00010001x;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 3'b011; // instruction_out1
+		end
+
+		11'b10000111xxx: // PLD A & B, instruction
+		begin 
+			o = 9'b000110011;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1;
+			giantmux_sel = 3'b011; // instruction_out1
+		end
+
+		default:
+		begin
+			o = 9'b00000000x;
+			instr_addr1 = pc - 1;
+			instr_addr2 = pc;
+		end
+
 		endcase	
 	end
 
-// if type I instruction should always set new PC value to +2
-always @(type, pc)
-	begin
-		if(type && !jmp && !cmp)
-			cnt_en = 0;
-			new_pc = pc + 2;
-	end
-
-	assign pc_sload = !cnt_en;
-
 endmodule
-
-//	assign instr_addr1 = pc;
-//	assign instr_addr2 = pc + 1;
-
-//	assign rs_wen = 0; //only pst 
-//	assign mux1_sel = 0; //only pst 
-//
-//	assign data_addr1 = rddata; //during set and have to keep the data_addr for next cycle
-//	assign data_addr2 = rsdata; //during set
-//	
-//	assign new_pc = 0; //because of pipelining will be different and depends on cond
-//	
-//	assign instr_Wen2 = 0; // only for writing self-modifying instructions
-//	assign data_Wen1 = instr[3]; // pst and port A enabled
-//	assign data_Wen2 = instr[2]; // pst and port B enabled
-//	
-//	assign cnt_en = 1; //except jumps and cmp conditional jumps
