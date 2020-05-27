@@ -4,17 +4,17 @@
 3. Jump points cannot start with a digit (ie. p0: is avalid jump point but 12: is not)
 
 # Syntax
-### STP
+#### STP
 > STP
 
-### CALL
+#### CALL
 > CALL Rd Fn I
 
 Rd: register to store return address<br/>
 Fn: jump point of function to call<br/>
 I: offset to shift register window by<br/>
 
-### RTN
+#### RTN
 > RTN Rd I
 
 Rd: Register of return address<br/>
