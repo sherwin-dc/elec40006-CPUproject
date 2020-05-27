@@ -6,7 +6,8 @@
 # Syntax
 ### STP
 > STP
-<br/> <br/>
+<br/>
+<br/>
 ### CALL
 > CALL Rd Fn I
 
