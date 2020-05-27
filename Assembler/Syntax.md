@@ -5,17 +5,17 @@
 
 # Syntax
 ### STP
-STP
+> STP
 
 ### CALL
-CALL Rd Fn I
+> CALL Rd Fn I
 
-Rd: register to store return address
-Fn: jump point of function to call
-I: offset to shift register window by
+Rd: register to store return address<br/>
+Fn: jump point of function to call<br/>
+I: offset to shift register window by<br/>
 
 ### RTN
-RTN Rd I
+> RTN Rd I
 
-Rd: Register of return address
-I: offset to shift register window by
+Rd: Register of return address<br/>
+I: offset to shift register window by<br/>
