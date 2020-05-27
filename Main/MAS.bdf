@@ -133,35 +133,6 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 720 328 888 408)
-	(text "Multiply16" (rect 5 0 54 12)(font "Arial" ))
-	(text "inst" (rect 8 64 25 76)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "A[15..0]" (rect 0 0 38 12)(font "Arial" ))
-		(text "A[15..0]" (rect 21 27 59 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "B[15..0]" (rect 0 0 38 12)(font "Arial" ))
-		(text "B[15..0]" (rect 21 43 59 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 168 32)
-		(output)
-		(text "R[15..0]" (rect 0 0 40 12)(font "Arial" ))
-		(text "R[15..0]" (rect 114 27 154 39)(font "Arial" ))
-		(line (pt 168 32)(pt 152 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 152 64))
-	)
-)
-(symbol
 	(rect 328 520 392 568)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst3" (rect 3 37 25 54)(font "Intel Clear" ))
@@ -338,6 +309,35 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 44 80)(pt 68 64))
 	)
 	(annotation_block (parameter)(rect 832 368 952 406))
+)
+(symbol
+	(rect 720 328 888 408)
+	(text "FasterMultiply16" (rect 5 0 86 12)(font "Arial" ))
+	(text "inst" (rect 8 64 25 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "A[15..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "A[15..0]" (rect 21 27 59 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "B[15..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "B[15..0]" (rect 21 43 59 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 168 32)
+		(output)
+		(text "R[15..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "R[15..0]" (rect 114 27 154 39)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 152 64))
+	)
 )
 (connector
 	(text "type_I" (rect 282 520 311 537)(font "Intel Clear" ))
