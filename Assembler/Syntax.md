@@ -3,6 +3,7 @@
 2. Jump points must end with a ":"
 3. Jump points cannot start with a digit (ie. p0: is a valid jump point but 12: is not)
 4. Fields in curly braces {} are optional
+5. comments start with "//"
 
 # Syntax
 ### STP
