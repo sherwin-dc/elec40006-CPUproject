@@ -39,7 +39,7 @@ A (optional): Type of shift to perform
 
 ### CMP
 > CMP Rd Rs COND SKIPLEN<br/>
-CMP Rd N COND SKIPLEN
+CMP Rd #N COND SKIPLEN
 
 Rd: Register 1 to compare<br/>
 Rs: Register 2 to compare (specify only if not using operand)<br/>
@@ -62,7 +62,7 @@ addr: jump point to jump to<br/>
 
 ### ADD
 > ADD Rd Rs Rm<br/>
-ADD Rd Rs N
+ADD Rd Rs #N
 
 Rd: destination register<br/>
 Rs: source register 1<br/>
@@ -71,7 +71,7 @@ N: operand (specify only if not using Rm)<br/>
 
 ### SUB
 > SUB Rd Rs Rm {EZ} {SL}<br/>
-SUB Rd Rs N {EZ} {SL}
+SUB Rd Rs #N {EZ} {SL}
 
 Rd: destination register<br/>
 Rs: source register 1<br/>
@@ -87,7 +87,7 @@ SL: (optional): number of additionaladdresses used by next instruction if perfor
 
 ### MAS
 > MAS Rd Rs Rm<br/>
-MAS Rs Rs N {P}
+MAS Rs Rs #N {P}
 
 Rd: destination register<br/>
 Rs: source register 1<br/>
@@ -99,14 +99,14 @@ P: position of operand (in product or sum)
 
 ### MOV
 >MOV Rd Rs<br/>
-MOV Rd N
+MOV Rd #N
 
 Rd: destination register<br/>
 Rs: source register (specify only if not using operand)<br/>
 N: operand (specify only if not using Rs)<br/>
 
 ### SET
-> SET Rd{+/-N} Rs{+/-N} {M}
+> SET Rd{+/-#N} Rs{+/-#N} {M}
 
 Rd: access address of PORTA<br/>
 Rs: access address of PORTB<br/>
