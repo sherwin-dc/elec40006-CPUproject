@@ -1,0 +1,9 @@
+MOV R2 #10
+
+p0:
+SET R2 R2+#1
+PLD R1 R2
+CMP R2 R0 NP 1
+JMP p0
+MOV R7 #1
+STP
