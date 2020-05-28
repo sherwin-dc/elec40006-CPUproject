@@ -1652,13 +1652,6 @@ https://fpgasoftware.intel.com/eula.
 	(color 255 0 255)
 )
 (connector
-	(text "giantmux_sel[2..0]" (rect 720 528 807 545)(font "Intel Clear" (color 197 131 0)))
-	(pt 720 544)
-	(pt 800 544)
-	(bus)
-	(color 197 131 0)
-)
-(connector
 	(pt 1048 528)
 	(pt 920 528)
 	(color 197 131 0)
@@ -2088,6 +2081,12 @@ https://fpgasoftware.intel.com/eula.
 	(pt 976 248)
 	(bus)
 	(color 255 0 4)
+)
+(connector
+	(text "giantmux_sel[2..0]" (rect 720 528 807 545)(font "Intel Clear" ))
+	(pt 720 544)
+	(pt 792 544)
+	(bus)
 )
 (junction (pt -280 200))
 (junction (pt -224 216))
