@@ -214,6 +214,7 @@ new_pc = 16'b0;
 			o = 10'b000100001x;
 			instr_addr1 = pc + 1'd1;
 			instr_addr2 = pc + 2'd2;
+			new_pc = pc + 2'd2;
 			giantmux_sel = 3'b010; // N (instr_out2)
 		end
 
