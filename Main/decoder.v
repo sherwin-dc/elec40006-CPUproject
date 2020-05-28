@@ -9,7 +9,7 @@ module decoder
 );
 
 wire [10:0] i = {instr[15:11], instr[4:0], jump}; // wire for inputs
-reg [8:0] o;
+reg [9:0] o;
 
 assign {instr_wen2, data_wen1, data_wen2, rd_wen, rs_wen, move_fp, push_up, cnt_en, pc_sload, rsmux_sel} = o;
 
