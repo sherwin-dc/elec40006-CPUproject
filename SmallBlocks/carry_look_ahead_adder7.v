@@ -5,7 +5,7 @@ input cin,
 output [6:0] R
 );
 wire p0,  p1,  p2,  p3,  p4,  p5,  p6; 
-wire g0,  g1,  g2,  g3,  g4,  g5,  g6; 
+wire g0,  g1,  g2,  g3,  g4,  g5; 
 wire c0,  c1,  c2,  c3,  c4,  c5,  c6; 
 
 assign p0 = A[0] ^ B[0];
@@ -22,7 +22,7 @@ assign g2 = A[2] & B[2];
 assign g3 = A[3] & B[3];
 assign g4 = A[4] & B[4];
 assign g5 = A[5] & B[5];
-assign g6 = A[6] & B[6];
+//assign g6 = A[6] & B[6];
 
 assign c0 = cin;
 assign c1 = g0 | (p0 & cin);
