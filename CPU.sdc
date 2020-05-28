@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition"
 
-## DATE    "Wed May 27 17:40:11 2020"
+## DATE    "Thu May 28 12:16:08 2020"
 
 ##
 ## DEVICE  "5CGXFC7C7F23C8"
@@ -39,7 +39,7 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {clock} -period 10.000 -waveform { 0.000 5.000 } [get_ports {clock}]
+create_clock -name {clock} -period 1.000 -waveform { 0.000 0.500 } [get_ports {clock}]
 
 
 #**************************************************************
