@@ -929,7 +929,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 184 32)
 		(output)
 		(text "jump" (rect 0 0 25 14)(font "Arial" ))
-		(text "jump" (rect 142 27 163 41)(font "Arial" ))
+		(text "jump" (rect 142 27 167 41)(font "Arial" ))
 		(line (pt 184 32)(pt 168 32))
 	)
 	(drawing
