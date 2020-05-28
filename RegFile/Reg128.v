@@ -18,7 +18,7 @@ assign Rm_Out = RmOut;
 
 
 // To read data without clock
-always @(posedge Clock) begin
+always @(*) begin
     case(Rd_Addr)
         7'd0 : RdOut = R0;
         7'd1 : RdOut = R1;
