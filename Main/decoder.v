@@ -50,15 +50,7 @@ new_pc = 16'b0;
 			new_pc = rddata + 1'd1;
 		end
 
-		11'b11000xxxxxx: // LSL
-		begin
-			o = 10'b000100010x;
-			giantmux_sel = 3'b100; // aluout
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
-		end 
-
-		11'b11010xxxxxx: // LSR
+		11'b110x0xxxxxx: // LSL and/or LSR
 		begin
 			o = 10'b000100010x;
 			giantmux_sel = 3'b100; // aluout
@@ -97,11 +89,13 @@ new_pc = 16'b0;
 			new_pc = N + 1'd1;
 		end 
 
-		11'b01000xxxxxx: // ADD R
+		11'b0100xxxxxx: // ADD R and/or I
 		begin
 			o = 10'b000100010x;
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
+			o = {7'b0001000, !instr[11], instr[11], 1'bx};
+			instr_addr1 = pc + instr[11];
+			instr_addr2 = pc + instr[11] + 1'd1;
+			new_pc = pc + instr[11] + 1'd1;
 			giantmux_sel = 3'b100; // aluout
 		end 
 
@@ -130,21 +124,12 @@ new_pc = 16'b0;
 			giantmux_sel = 3'b100; // aluout
 		end
 
-		11'b01010xxx101: // SUB R, jump passed, next instruction R
+		11'b01010xxx1x1: // SUB R, jump passed, next instruction R and/or I
 		begin
 			o = 10'b000100001x;
-			instr_addr1 = pc + 1'd1;
-			instr_addr2 = pc + 2'd2;
-			new_pc = pc + 2'd2;
-			giantmux_sel = 3'b100; // aluout
-		end 
-
-		11'b01010xxx111: // SUB R, jump passed, next instruction I
-		begin 
-			o = 10'b000100001x;
-			instr_addr1 = pc + 2'd2;
-			instr_addr2 = pc + 2'd3;
-			new_pc = pc + 2'd3;
+			instr_addr1 = pc + instr[0] + 1'd1;
+			instr_addr2 = pc + instr[0] + 2'd2;
+			new_pc = pc + instr[0] + 2'd2;
 			giantmux_sel = 3'b100; // aluout
 		end 
 
@@ -166,56 +151,32 @@ new_pc = 16'b0;
 			giantmux_sel = 3'b100; // aluout
 		end 
 
-		11'b01011xxx101: // SUB I, jump passed, next instruction R
+		11'b01011xxx1x1: // SUB I, jump passed, next instruction R and/or I
 		begin 
 			o = 10'b000100001x;
-			instr_addr1 = pc + 2'd2;
-			instr_addr2 = pc + 2'd3;
-			new_pc = pc + 2'd3;
+			instr_addr1 = pc + instr[0] + 2'd2;
+			instr_addr2 = pc + instr[0] + 2'd3;
+			new_pc = pc + instr[0] + 2'd3;
 			giantmux_sel = 3'b100; // aluout
 		end 
 
-		11'b01011xxx111: // SUB I, jump passed, next instruction I
-		begin
-			o = 10'b000100001x;
-			instr_addr1 = pc + 2'd3;
-			instr_addr2 = pc + 3'd4;
-			new_pc = pc + 3'd4;
-			giantmux_sel = 3'b100; // aluout
-		end 
-
-		11'b0110xxxxxx: // MAS R
+		11'b0110xxxxxxx: // MAS R and/or I
 		begin 
 			o = 10'b000100010x;
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
-			giantmux_sel = 3'b101; // masout
-		end 
-
-		11'b01101xxxxxx: // MAS I
-		begin 
-			o = 10'b000100001x;
-			instr_addr1 = pc + 1'd1;
-			instr_addr2 = pc + 2'd2;
+			o = {7'b0001000, !instr[11], instr[11], 1'bx};
+			instr_addr1 = pc + instr[11];
+			instr_addr2 = pc + instr[11] + 1'd1;
 			new_pc = pc + 2'd2;
 			giantmux_sel = 3'b101; // masout
 		end 
 
-		11'b01110xxxxxx: // MOV R
+		11'b0111xxxxxxx: // MOV R and/or I
 		begin 
-			o = 10'b000100010x;
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
-			giantmux_sel = 3'b000; // rsdata
-		end
-
-		11'b01111xxxxxx: // MOV I
-		begin 
-			o = 10'b000100001x;
-			instr_addr1 = pc + 1'd1;
-			instr_addr2 = pc + 2'd2;
+			o = {7'b0001000, !instr[11], instr[11], 1'bx};
+			instr_addr1 = pc + instr[11];
+			instr_addr2 = pc + instr[11] + 1'd1;
 			new_pc = pc + 2'd2;
-			giantmux_sel = 3'b010; // N (instr_out2)
+			giantmux_sel = {1'b0, instr[11], 1'b0}; // rsdata = 000, N = 010
 		end
 
 		11'b11111xxxxxx: // STP
@@ -349,22 +310,14 @@ new_pc = 16'b0;
 			new_pc = pc + 2'd2;
 		end
 
-		11'b100000xxxxx: // PLD A and/or B, data 
+		11'b100000xxxxx: // PLD A and/or B, data and/or instruction
 		begin 
-			o = {3'b000, instr[3], instr[2], 4'b00100};
+			o = {3'b000, instr[3], instr[2], 3'b0010, instr[4]};
 			instr_addr1 = pc;
 			instr_addr2 = pc + 1'd1;
-			giantmux_sel = 3'b110; // data_out1
+			giantmux_sel = {!instr[4], 1'b1, instr[4]}; // 110 = data_out1, 011 = instr_out1
 		end
 
-		11'b100001xxxxx: // PLD A and/or B, instruction
-		begin 
-			o = {3'b000, instr[3], instr[2], 4'b00101};
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
-			giantmux_sel = 3'b011; // instruction_out1
-		end
-		
 		11'b100100xxxxx: // PST A and/or B, data
 		begin 
 			o = {1'b0, instr[3], instr[2], 6'b000010x};

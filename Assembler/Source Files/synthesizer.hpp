@@ -378,6 +378,9 @@ void synthesizer::CMP() {
   else if(tmp[4]=="mi") {
     cond==5;
   }
+  else if(tmp[4]=="np") {
+    cond==6;
+  }
   else  {
     cerr<<"Invalid COND in CMP at line "<<tmp[0]<<endl;
     exit(1);
