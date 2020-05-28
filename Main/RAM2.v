@@ -1,10 +1,10 @@
-// megafunction wizard: %RAM: 2-PORT%VBB%
+// megafunction wizard: %RAM: 2-PORT%
 // GENERATION: STANDARD
 // VERSION: WM1.0
 // MODULE: altsyncram 
 
 // ============================================================
-// File Name: RAM.v
+// File Name: RAM2.v
 // Megafunction Name(s):
 // 			altsyncram
 //
@@ -16,6 +16,7 @@
 //
 // 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 // ************************************************************
+
 
 //Copyright (C) 2019  Intel Corporation. All rights reserved.
 //Your use of Intel Corporation's design tools, logic functions 
@@ -32,7 +33,11 @@
 //refer to the applicable agreement for further details, at
 //https://fpgasoftware.intel.com/eula.
 
-module RAM (
+
+// synopsys translate_off
+`timescale 1 ps / 1 ps
+// synopsys translate_on
+module RAM2 (
 	address_a,
 	address_b,
 	clock,
@@ -61,6 +66,65 @@ module RAM (
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
 `endif
+
+	wire [15:0] sub_wire0;
+	wire [15:0] sub_wire1;
+	wire [15:0] q_a = sub_wire0[15:0];
+	wire [15:0] q_b = sub_wire1[15:0];
+
+	altsyncram	altsyncram_component (
+				.address_a (address_a),
+				.address_b (address_b),
+				.clock0 (clock),
+				.data_a (data_a),
+				.data_b (data_b),
+				.wren_a (wren_a),
+				.wren_b (wren_b),
+				.q_a (sub_wire0),
+				.q_b (sub_wire1),
+				.aclr0 (1'b0),
+				.aclr1 (1'b0),
+				.addressstall_a (1'b0),
+				.addressstall_b (1'b0),
+				.byteena_a (1'b1),
+				.byteena_b (1'b1),
+				.clock1 (1'b1),
+				.clocken0 (1'b1),
+				.clocken1 (1'b1),
+				.clocken2 (1'b1),
+				.clocken3 (1'b1),
+				.eccstatus (),
+				.rden_a (1'b1),
+				.rden_b (1'b1));
+	defparam
+		altsyncram_component.address_reg_b = "CLOCK0",
+		altsyncram_component.clock_enable_input_a = "BYPASS",
+		altsyncram_component.clock_enable_input_b = "BYPASS",
+		altsyncram_component.clock_enable_output_a = "BYPASS",
+		altsyncram_component.clock_enable_output_b = "BYPASS",
+		altsyncram_component.indata_reg_b = "CLOCK0",
+		altsyncram_component.init_file = "./Test Programs/simple_linked_list.mif",
+		altsyncram_component.intended_device_family = "Cyclone V",
+		altsyncram_component.lpm_type = "altsyncram",
+		altsyncram_component.numwords_a = 65536,
+		altsyncram_component.numwords_b = 65536,
+		altsyncram_component.operation_mode = "BIDIR_DUAL_PORT",
+		altsyncram_component.outdata_aclr_a = "NONE",
+		altsyncram_component.outdata_aclr_b = "NONE",
+		altsyncram_component.outdata_reg_a = "UNREGISTERED",
+		altsyncram_component.outdata_reg_b = "UNREGISTERED",
+		altsyncram_component.power_up_uninitialized = "FALSE",
+		altsyncram_component.read_during_write_mode_mixed_ports = "OLD_DATA",
+		altsyncram_component.read_during_write_mode_port_a = "NEW_DATA_NO_NBE_READ",
+		altsyncram_component.read_during_write_mode_port_b = "NEW_DATA_NO_NBE_READ",
+		altsyncram_component.widthad_a = 16,
+		altsyncram_component.widthad_b = 16,
+		altsyncram_component.width_a = 16,
+		altsyncram_component.width_b = 16,
+		altsyncram_component.width_byteena_a = 1,
+		altsyncram_component.width_byteena_b = 1,
+		altsyncram_component.wrcontrol_wraddress_reg_b = "CLOCK0";
+
 
 endmodule
 
@@ -99,12 +163,12 @@ endmodule
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
 // Retrieval info: PRIVATE: MEMSIZE NUMERIC "1048576"
 // Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "./Test Programs/simple_traverse.mif"
+// Retrieval info: PRIVATE: MIFfilename STRING "./Test Programs/simple_linked_list.mif"
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "3"
 // Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "0"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
-// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "2"
+// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "1"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_B NUMERIC "3"
 // Retrieval info: PRIVATE: REGdata NUMERIC "1"
@@ -113,7 +177,7 @@ endmodule
 // Retrieval info: PRIVATE: REGrren NUMERIC "0"
 // Retrieval info: PRIVATE: REGwraddress NUMERIC "1"
 // Retrieval info: PRIVATE: REGwren NUMERIC "1"
-// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "1"
+// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 // Retrieval info: PRIVATE: USE_DIFF_CLKEN NUMERIC "0"
 // Retrieval info: PRIVATE: UseDPRAM NUMERIC "1"
 // Retrieval info: PRIVATE: VarWidth NUMERIC "0"
@@ -133,7 +197,7 @@ endmodule
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
 // Retrieval info: CONSTANT: INDATA_REG_B STRING "CLOCK0"
-// Retrieval info: CONSTANT: INIT_FILE STRING "./Test Programs/simple_traverse.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "./Test Programs/simple_linked_list.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
 // Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "65536"
@@ -144,7 +208,7 @@ endmodule
 // Retrieval info: CONSTANT: OUTDATA_REG_A STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: OUTDATA_REG_B STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
-// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
+// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "OLD_DATA"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "NEW_DATA_NO_NBE_READ"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_B STRING "NEW_DATA_NO_NBE_READ"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "16"
@@ -172,11 +236,10 @@ endmodule
 // Retrieval info: CONNECT: @wren_b 0 0 0 0 wren_b 0 0 0 0
 // Retrieval info: CONNECT: q_a 0 0 16 0 @q_a 0 0 16 0
 // Retrieval info: CONNECT: q_b 0 0 16 0 @q_b 0 0 16 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM.bsf TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM_bb.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM_syn.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2.bsf TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf

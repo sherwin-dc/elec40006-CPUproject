@@ -4,7 +4,7 @@
 // MODULE: altsyncram 
 
 // ============================================================
-// File Name: RAM.v
+// File Name: RAM2.v
 // Megafunction Name(s):
 // 			altsyncram
 //
@@ -32,7 +32,7 @@
 //refer to the applicable agreement for further details, at
 //https://fpgasoftware.intel.com/eula.
 
-module RAM (
+module RAM2 (
 	address_a,
 	address_b,
 	clock,
@@ -99,12 +99,12 @@ endmodule
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
 // Retrieval info: PRIVATE: MEMSIZE NUMERIC "1048576"
 // Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "./Test Programs/simple_traverse.mif"
+// Retrieval info: PRIVATE: MIFfilename STRING "./Test Programs/simple_linked_list.mif"
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "3"
 // Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "0"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
-// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "2"
+// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "1"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_B NUMERIC "3"
 // Retrieval info: PRIVATE: REGdata NUMERIC "1"
@@ -113,7 +113,7 @@ endmodule
 // Retrieval info: PRIVATE: REGrren NUMERIC "0"
 // Retrieval info: PRIVATE: REGwraddress NUMERIC "1"
 // Retrieval info: PRIVATE: REGwren NUMERIC "1"
-// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "1"
+// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 // Retrieval info: PRIVATE: USE_DIFF_CLKEN NUMERIC "0"
 // Retrieval info: PRIVATE: UseDPRAM NUMERIC "1"
 // Retrieval info: PRIVATE: VarWidth NUMERIC "0"
@@ -133,7 +133,7 @@ endmodule
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
 // Retrieval info: CONSTANT: INDATA_REG_B STRING "CLOCK0"
-// Retrieval info: CONSTANT: INIT_FILE STRING "./Test Programs/simple_traverse.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "./Test Programs/simple_linked_list.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
 // Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "65536"
@@ -144,7 +144,7 @@ endmodule
 // Retrieval info: CONSTANT: OUTDATA_REG_A STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: OUTDATA_REG_B STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
-// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
+// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "OLD_DATA"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "NEW_DATA_NO_NBE_READ"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_B STRING "NEW_DATA_NO_NBE_READ"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "16"
@@ -172,11 +172,10 @@ endmodule
 // Retrieval info: CONNECT: @wren_b 0 0 0 0 wren_b 0 0 0 0
 // Retrieval info: CONNECT: q_a 0 0 16 0 @q_a 0 0 16 0
 // Retrieval info: CONNECT: q_b 0 0 16 0 @q_b 0 0 16 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM.bsf TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM_bb.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL RAM_syn.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2.bsf TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL RAM2_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf
