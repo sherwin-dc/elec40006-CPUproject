@@ -52,7 +52,8 @@ COND: compare condition
 - GR: greater than - Rd > Rs or Rd > N
 - LS: less than - Rd < Rs or Rd < N
 - EZ: equal to zero - Rd == 0
-- MI - 2s-complement negative - Rd < 0 (2s-complement)
+- MI: 2s-complement negative - Rd < 0 (2s-complement)
+- NP: null pointer - Rd == nullptr 
 
 ### JMP
 > JMP Rd<br/>
