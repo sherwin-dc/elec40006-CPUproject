@@ -69,16 +69,16 @@ new_pc = 16'b0;
 		11'b0001xxxxxx0: // failed CMP 
 		begin 
 			o = 10'b000000010x;
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
+			instr_addr1 = pc + instr[11];
+			instr_addr2 = pc + instr[11] + 1'd1;
 		end
 
 		11'b0001xxxxxx1: // CMP passed 
 		begin
 			o = 10'b000000001x;
-			instr_addr1 = pc + instr[1:0]; // is this allowed? or will this work?
-			instr_addr2 = pc + instr[1:0] + 1'd1; 
-			new_pc = pc + instr[1:0] + 1'd1;
+			instr_addr1 = pc + instr[1:0] + instr[11] + 1'd1; // is this allowed? or will this work?
+			instr_addr2 = pc + instr[1:0] + instr[11] + 2'd2; 
+			new_pc = pc + instr[1:0] + instr[11] + 2'd2;
 		end 
 
 		11'b00100xxxxxx: // JMP R
