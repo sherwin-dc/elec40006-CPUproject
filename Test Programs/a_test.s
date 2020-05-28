@@ -1,0 +1,13 @@
+MOV R0 #3
+JMP p0
+
+ORG 10
+p0:
+MOV R1 R0
+JMP p1
+
+ORG 50
+p1:
+MOV R0 #10
+MOV R2 R0
+STP
