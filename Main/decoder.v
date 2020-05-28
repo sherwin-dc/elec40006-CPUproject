@@ -28,7 +28,7 @@ new_pc = 16'b0;
 		casex (i)
 		11'b00000xxxxxx: // NOP
 		begin 
-			o = 10'b000000010x;
+			o = 10'b000000000x;
 			instr_addr1 = pc;
 			instr_addr2 = pc + 1'd1;
 		end
@@ -164,19 +164,27 @@ new_pc = 16'b0;
 		begin 
 			o = 10'b000100010x;
 			o = {7'b0001000, !instr[11], instr[11], 1'bx};
-			instr_addr1 = pc + instr[11];
-			instr_addr2 = pc + instr[11] + 1'd1;
-			new_pc = pc + 2'd2;
+			instr_addr1 = pc + instr[11] + instr[11];
+			instr_addr2 = pc + instr[11] + instr[11] + 1'd1;
+			new_pc = pc + pc + instr[11] + instr[11] + 1'd1;
 			giantmux_sel = 3'b101; // masout
 		end 
 
-		11'b0111xxxxxxx: // MOV R and/or I
+		11'b01110xxxxxx: // MOV R
 		begin 
-			o = {7'b0001000, !instr[11], instr[11], 1'bx};
-			instr_addr1 = pc + instr[11];
-			instr_addr2 = pc + instr[11] + 1'd1;
+			o = 10'b000100010x;
+			instr_addr1 = pc + 1'd1;
+			instr_addr2 = pc + 2'd2;
+			giantmux_sel = 3'b000; // rsdata = 000
+		end
+		
+		11'b01111xxxxxx: // MOV I
+		begin 
+			o = 10'b000100001x;
+			instr_addr1 = pc + 2'd2;
+			instr_addr2 = pc + 2'd3;
 			new_pc = pc + 2'd2;
-			giantmux_sel = {1'b0, instr[11], 1'b0}; // rsdata = 000, N = 010
+			giantmux_sel = 1'b010; // rsdata = 000, N = 010
 		end
 
 		11'b11111xxxxxx: // STP
