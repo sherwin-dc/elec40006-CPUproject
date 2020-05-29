@@ -61,8 +61,8 @@ new_pc = 16'b0;
 		11'b0001xxxxxx0: // failed CMP 
 		begin 
 			o = 12'b000000010x00;
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
+			instr_addr1 = pc + instr[11];
+			instr_addr2 = pc + instr[11] + 1'd1;
 		end
 
 		11'b0001xxxxxx1: // CMP passed 
