@@ -1,6 +1,6 @@
 MOV R1 #2
 MOV R2 #3
-MOV R3 #4 
+MOV R3 #4
 MOV R4 #5 
 p0:
 MAS R4 R1 R2
