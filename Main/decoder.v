@@ -73,13 +73,21 @@ new_pc = 16'b0;
 			new_pc = pc + 2'd2;
 		end
 
-		11'b0001xxxxxx1: // CMP passed 
+		11'b00010xxxxx1: // CMP passed R
 		begin
 			o = 12'b000000001x00;
-			instr_addr1 = pc + instr[11] + instr[1:0];
-			instr_addr2 = pc + instr[11] + instr[1:0] + 1'd1; 
-			new_pc = pc + instr[11] + instr[1:0] + 1'd1;
+			instr_addr1 = pc + instr[1:0] + 2'd1;
+			instr_addr2 = pc + instr[1:0] + 2'd2; 
+			new_pc = pc + instr[1:0] + 2'd2;
 		end 
+		
+		11'b00011xxxxx1: // CMP passed I
+		begin
+			o = 12'b000000001x00;
+			instr_addr1 = pc + instr[1:0] + 2'd2;
+			instr_addr2 = pc + instr[1:0] + 3'd3; 
+			new_pc = pc + instr[1:0] + 3'd3;
+		end
 
 		11'b00100xxxxxx: // JMP R
 		begin
