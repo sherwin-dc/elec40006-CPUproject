@@ -58,11 +58,19 @@ new_pc = 16'b0;
 			instr_addr2 = pc + 1'd1;
 		end 
 
-		11'b0001xxxxxx0: // failed CMP 
+		11'b00010xxxxx0: // failed CMP R
 		begin 
 			o = 12'b000000010x00;
-			instr_addr1 = pc + instr[11];
-			instr_addr2 = pc + instr[11] + 1'd1;
+			instr_addr1 = pc;
+			instr_addr2 = pc + 1'd1;
+		end
+		
+		11'b00011xxxxx0: // failed CMP I
+		begin 
+			o = 12'b000000001x00;
+			instr_addr1 = pc + 1'd1;
+			instr_addr2 = pc + 2'd2;
+			new_pc = pc + 2'd2;
 		end
 
 		11'b0001xxxxxx1: // CMP passed 
