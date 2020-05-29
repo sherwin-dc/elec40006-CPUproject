@@ -105,22 +105,12 @@ new_pc = 16'b0;
 			new_pc = N + 1'd1;
 		end 
 
-		11'b0100xxxxxx: // ADD R and/or I
+		11'b0100xxxxxxx: // ADD R and/or I
 		begin
-			o = 12'b000100010x00;
-			o = {7'b0001000, !instr[11], instr[11], 1'bx};
+			o = {7'b0001000, !instr[11], instr[11], 3'bx00};
 			instr_addr1 = pc + instr[11];
 			instr_addr2 = pc + instr[11] + 1'd1;
 			new_pc = pc + instr[11] + 1'd1;
-			giantmux_sel = 3'b100; // aluout
-		end 
-
-		11'b01001xxxxxx: // ADD I
-		begin
-			o = 12'b000100001x00;
-			instr_addr1 = pc + 1'd1;
-			instr_addr2 = pc + 2'd2;
-			new_pc = pc + 2'd2;
 			giantmux_sel = 3'b100; // aluout
 		end 
 

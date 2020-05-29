@@ -23,6 +23,7 @@ quit -f
 
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -41,6 +42,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 
@@ -1282,1026 +1284,6 @@ SIGNAL("PC[0]")
 	PARENT = "PC";
 }
 
-SIGNAL("portA_data")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("portA_data[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data";
-}
-
-SIGNAL("portA_data_addr")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("portA_data_addr[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portA_data_addr[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr";
-}
-
-SIGNAL("portB_data")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("portB_data[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data";
-}
-
-SIGNAL("portB_data_addr")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("portB_data_addr[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portB_data_addr[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr";
-}
-
-SIGNAL("portA_data_addr_input")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("portA_data_addr_input[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portA_data_addr_input[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portA_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 16;
-	LSB_INDEX = 0;
-	DIRECTION = OUTPUT;
-	PARENT = "";
-}
-
-SIGNAL("portB_data_addr_input[15]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[14]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[13]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[12]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[11]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[10]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[9]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[8]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[7]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[6]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[5]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[4]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
-SIGNAL("portB_data_addr_input[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = OUTPUT;
-	PARENT = "portB_data_addr_input";
-}
-
 SIGNAL("Rs_data_into_Reg")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -2640,6 +1622,16 @@ SIGNAL("Rd_data_into_Reg[0]")
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
 	PARENT = "Rd_data_into_Reg";
+}
+
+SIGNAL("jump_output")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
 }
 
 TRANSITION_LIST("clock")
@@ -3664,870 +2656,6 @@ TRANSITION_LIST("PC[0]")
 	}
 }
 
-TRANSITION_LIST("portA_data[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portA_data_addr_input[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[15]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[14]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[13]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[12]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[11]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[10]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[9]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[8]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[7]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[6]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[5]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[4]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("portB_data_addr_input[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 1000.0;
-	}
-}
-
 TRANSITION_LIST("Rs_data_into_Reg[15]")
 {
 	NODE
@@ -4808,6 +2936,15 @@ TRANSITION_LIST("Rd_data_into_Reg[1]")
 }
 
 TRANSITION_LIST("Rd_data_into_Reg[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("jump_output")
 {
 	NODE
 	{
@@ -5507,7 +3644,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input";
+	CHANNEL = "Rd_data_into_Reg";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 69;
@@ -5517,7 +3654,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[15]";
+	CHANNEL = "Rd_data_into_Reg[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 70;
@@ -5527,7 +3664,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[14]";
+	CHANNEL = "Rd_data_into_Reg[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 71;
@@ -5537,7 +3674,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[13]";
+	CHANNEL = "Rd_data_into_Reg[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 72;
@@ -5547,7 +3684,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[12]";
+	CHANNEL = "Rd_data_into_Reg[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 73;
@@ -5557,7 +3694,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[11]";
+	CHANNEL = "Rd_data_into_Reg[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 74;
@@ -5567,7 +3704,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[10]";
+	CHANNEL = "Rd_data_into_Reg[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 75;
@@ -5577,7 +3714,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[9]";
+	CHANNEL = "Rd_data_into_Reg[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 76;
@@ -5587,7 +3724,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[8]";
+	CHANNEL = "Rd_data_into_Reg[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 77;
@@ -5597,7 +3734,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[7]";
+	CHANNEL = "Rd_data_into_Reg[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 78;
@@ -5607,7 +3744,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[6]";
+	CHANNEL = "Rd_data_into_Reg[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 79;
@@ -5617,7 +3754,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[5]";
+	CHANNEL = "Rd_data_into_Reg[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 80;
@@ -5627,7 +3764,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[4]";
+	CHANNEL = "Rd_data_into_Reg[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 81;
@@ -5637,7 +3774,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[3]";
+	CHANNEL = "Rd_data_into_Reg[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 82;
@@ -5647,7 +3784,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[2]";
+	CHANNEL = "Rd_data_into_Reg[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 83;
@@ -5657,7 +3794,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[1]";
+	CHANNEL = "Rd_data_into_Reg[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 84;
@@ -5667,7 +3804,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr_input[0]";
+	CHANNEL = "Rd_data_into_Reg[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 85;
@@ -5677,7 +3814,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input";
+	CHANNEL = "Rd_value";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 86;
@@ -5687,7 +3824,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[15]";
+	CHANNEL = "Rd_value[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 87;
@@ -5697,7 +3834,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[14]";
+	CHANNEL = "Rd_value[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 88;
@@ -5707,7 +3844,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[13]";
+	CHANNEL = "Rd_value[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 89;
@@ -5717,7 +3854,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[12]";
+	CHANNEL = "Rd_value[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 90;
@@ -5727,7 +3864,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[11]";
+	CHANNEL = "Rd_value[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 91;
@@ -5737,7 +3874,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[10]";
+	CHANNEL = "Rd_value[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 92;
@@ -5747,7 +3884,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[9]";
+	CHANNEL = "Rd_value[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 93;
@@ -5757,7 +3894,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[8]";
+	CHANNEL = "Rd_value[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 94;
@@ -5767,7 +3904,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[7]";
+	CHANNEL = "Rd_value[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 95;
@@ -5777,7 +3914,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[6]";
+	CHANNEL = "Rd_value[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 96;
@@ -5787,7 +3924,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[5]";
+	CHANNEL = "Rd_value[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 97;
@@ -5797,7 +3934,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[4]";
+	CHANNEL = "Rd_value[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 98;
@@ -5807,7 +3944,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[3]";
+	CHANNEL = "Rd_value[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 99;
@@ -5817,7 +3954,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[2]";
+	CHANNEL = "Rd_value[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 100;
@@ -5827,7 +3964,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[1]";
+	CHANNEL = "Rd_value[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 101;
@@ -5837,7 +3974,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr_input[0]";
+	CHANNEL = "Rd_value[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 102;
@@ -5847,7 +3984,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr";
+	CHANNEL = "Rs_data_into_Reg";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 103;
@@ -5857,7 +3994,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[15]";
+	CHANNEL = "Rs_data_into_Reg[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 104;
@@ -5867,7 +4004,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[14]";
+	CHANNEL = "Rs_data_into_Reg[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 105;
@@ -5877,7 +4014,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[13]";
+	CHANNEL = "Rs_data_into_Reg[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 106;
@@ -5887,7 +4024,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[12]";
+	CHANNEL = "Rs_data_into_Reg[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 107;
@@ -5897,7 +4034,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[11]";
+	CHANNEL = "Rs_data_into_Reg[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 108;
@@ -5907,7 +4044,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[10]";
+	CHANNEL = "Rs_data_into_Reg[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 109;
@@ -5917,7 +4054,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[9]";
+	CHANNEL = "Rs_data_into_Reg[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 110;
@@ -5927,7 +4064,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[8]";
+	CHANNEL = "Rs_data_into_Reg[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 111;
@@ -5937,7 +4074,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[7]";
+	CHANNEL = "Rs_data_into_Reg[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 112;
@@ -5947,7 +4084,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[6]";
+	CHANNEL = "Rs_data_into_Reg[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 113;
@@ -5957,7 +4094,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[5]";
+	CHANNEL = "Rs_data_into_Reg[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 114;
@@ -5967,7 +4104,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[4]";
+	CHANNEL = "Rs_data_into_Reg[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 115;
@@ -5977,7 +4114,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[3]";
+	CHANNEL = "Rs_data_into_Reg[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 116;
@@ -5987,7 +4124,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[2]";
+	CHANNEL = "Rs_data_into_Reg[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 117;
@@ -5997,7 +4134,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[1]";
+	CHANNEL = "Rs_data_into_Reg[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 118;
@@ -6007,7 +4144,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data_addr[0]";
+	CHANNEL = "Rs_data_into_Reg[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 119;
@@ -6017,7 +4154,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr";
+	CHANNEL = "Rs_value";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 120;
@@ -6027,7 +4164,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[15]";
+	CHANNEL = "Rs_value[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 121;
@@ -6037,7 +4174,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[14]";
+	CHANNEL = "Rs_value[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 122;
@@ -6047,7 +4184,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[13]";
+	CHANNEL = "Rs_value[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 123;
@@ -6057,7 +4194,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[12]";
+	CHANNEL = "Rs_value[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 124;
@@ -6067,7 +4204,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[11]";
+	CHANNEL = "Rs_value[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 125;
@@ -6077,7 +4214,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[10]";
+	CHANNEL = "Rs_value[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 126;
@@ -6087,7 +4224,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[9]";
+	CHANNEL = "Rs_value[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 127;
@@ -6097,7 +4234,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[8]";
+	CHANNEL = "Rs_value[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 128;
@@ -6107,7 +4244,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[7]";
+	CHANNEL = "Rs_value[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 129;
@@ -6117,7 +4254,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[6]";
+	CHANNEL = "Rs_value[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 130;
@@ -6127,7 +4264,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[5]";
+	CHANNEL = "Rs_value[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 131;
@@ -6137,7 +4274,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[4]";
+	CHANNEL = "Rs_value[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 132;
@@ -6147,7 +4284,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[3]";
+	CHANNEL = "Rs_value[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 133;
@@ -6157,7 +4294,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[2]";
+	CHANNEL = "Rs_value[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 134;
@@ -6167,7 +4304,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[1]";
+	CHANNEL = "Rs_value[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 135;
@@ -6177,7 +4314,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data_addr[0]";
+	CHANNEL = "Rs_value[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 136;
@@ -6187,7 +4324,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data";
+	CHANNEL = "Rm_value";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 137;
@@ -6197,7 +4334,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[15]";
+	CHANNEL = "Rm_value[15]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 138;
@@ -6207,7 +4344,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[14]";
+	CHANNEL = "Rm_value[14]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 139;
@@ -6217,7 +4354,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[13]";
+	CHANNEL = "Rm_value[13]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 140;
@@ -6227,7 +4364,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[12]";
+	CHANNEL = "Rm_value[12]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 141;
@@ -6237,7 +4374,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[11]";
+	CHANNEL = "Rm_value[11]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 142;
@@ -6247,7 +4384,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[10]";
+	CHANNEL = "Rm_value[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 143;
@@ -6257,7 +4394,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[9]";
+	CHANNEL = "Rm_value[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 144;
@@ -6267,7 +4404,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[8]";
+	CHANNEL = "Rm_value[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 145;
@@ -6277,7 +4414,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[7]";
+	CHANNEL = "Rm_value[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 146;
@@ -6287,7 +4424,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[6]";
+	CHANNEL = "Rm_value[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 147;
@@ -6297,7 +4434,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[5]";
+	CHANNEL = "Rm_value[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 148;
@@ -6307,7 +4444,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[4]";
+	CHANNEL = "Rm_value[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 149;
@@ -6317,7 +4454,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[3]";
+	CHANNEL = "Rm_value[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 150;
@@ -6327,7 +4464,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[2]";
+	CHANNEL = "Rm_value[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 151;
@@ -6337,7 +4474,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[1]";
+	CHANNEL = "Rm_value[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 152;
@@ -6347,7 +4484,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portA_data[0]";
+	CHANNEL = "Rm_value[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 153;
@@ -6357,1022 +4494,11 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "portB_data";
+	CHANNEL = "jump_output";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
+	RADIX = Binary;
 	TREE_INDEX = 154;
 	TREE_LEVEL = 0;
-	CHILDREN = 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[15]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 155;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[14]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 156;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[13]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 157;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[12]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 158;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[11]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 159;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[10]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 160;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[9]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 161;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[8]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 162;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[7]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 163;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[6]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 164;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 165;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 166;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 167;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 168;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 169;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "portB_data[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 170;
-	TREE_LEVEL = 1;
-	PARENT = 154;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 171;
-	TREE_LEVEL = 0;
-	CHILDREN = 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[15]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 172;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[14]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 173;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[13]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 174;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[12]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 175;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[11]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 176;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[10]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 177;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[9]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 178;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[8]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 179;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[7]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 180;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[6]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 181;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 182;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 183;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 184;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 185;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 186;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_data_into_Reg[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 187;
-	TREE_LEVEL = 1;
-	PARENT = 171;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 188;
-	TREE_LEVEL = 0;
-	CHILDREN = 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[15]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 189;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[14]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 190;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[13]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 191;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[12]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 192;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[11]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 193;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[10]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 194;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[9]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 195;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[8]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 196;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[7]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 197;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[6]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 198;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 199;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 200;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 201;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 202;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 203;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rd_value[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 204;
-	TREE_LEVEL = 1;
-	PARENT = 188;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 205;
-	TREE_LEVEL = 0;
-	CHILDREN = 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[15]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 206;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[14]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 207;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[13]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 208;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[12]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 209;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[11]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 210;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[10]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 211;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[9]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 212;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[8]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 213;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[7]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 214;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[6]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 215;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 216;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 217;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 218;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 219;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 220;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_data_into_Reg[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 221;
-	TREE_LEVEL = 1;
-	PARENT = 205;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 222;
-	TREE_LEVEL = 0;
-	CHILDREN = 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[15]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 223;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[14]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 224;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[13]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 225;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[12]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 226;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[11]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 227;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[10]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 228;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[9]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 229;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[8]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 230;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[7]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 231;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[6]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 232;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 233;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 234;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 235;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 236;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 237;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rs_value[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 238;
-	TREE_LEVEL = 1;
-	PARENT = 222;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 239;
-	TREE_LEVEL = 0;
-	CHILDREN = 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[15]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 240;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[14]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 241;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[13]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 242;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[12]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 243;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[11]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 244;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[10]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 245;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[9]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 246;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[8]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 247;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[7]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 248;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[6]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 249;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 250;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 251;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 252;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 253;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 254;
-	TREE_LEVEL = 1;
-	PARENT = 239;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "Rm_value[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Hexadecimal;
-	TREE_INDEX = 255;
-	TREE_LEVEL = 1;
-	PARENT = 239;
 }
 
 TIME_BAR
