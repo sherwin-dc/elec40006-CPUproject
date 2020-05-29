@@ -1,4 +1,4 @@
-module Compare2
+module Compare
 (
 input R_or_I,
 input CMP_or_SUB,
@@ -36,7 +36,7 @@ WideOr = R[15] | R[14] | R[13] | R[12] | R[11] | R[10] | R[9] | R[8] | R[7] | R[
 case(Cond)
     3'b000 : jump = !WideOr; // Rd == Rs/N
     3'b001 : jump = WideOr; // Rd != Rs/N
-    3'b010 : jump = WideOr & R[15]; // Rd > Rs/N  // Checks that R != 0 and R !< 0
+    3'b010 : jump = WideOr & !(R[15]); // Rd > Rs/N  // Checks that R != 0 and R !< 0
     3'b011 : jump = R[15]; // Rd < Rs/N
     3'b100 : jump = !(rddata[15] | rddata[14] | rddata[13] | rddata[12] | rddata[11] | rddata[10] | rddata[9] | rddata[8] | rddata[7] | rddata[6] | rddata[5] | rddata[4] | rddata[3] | rddata[2] | rddata[1] | rddata[0]);
     3'b101 : jump = rddata[15]; // Rd < 0
