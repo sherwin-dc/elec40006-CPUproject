@@ -66,39 +66,33 @@ set_global_assignment -name VERILOG_FILE SmallBlocks/Demux16.v
 set_global_assignment -name VERILOG_FILE Main/decoder.v
 set_global_assignment -name VERILOG_FILE SmallBlocks/CMP.v
 set_global_assignment -name VERILOG_FILE Main/ALU.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE testing/cmp_test.vwf
 set_global_assignment -name VERILOG_FILE RegFile/Reg_Data_Writer.v
 set_global_assignment -name VERILOG_FILE RegFile/Reg128.v
 set_global_assignment -name BDF_FILE RegisterStack.bdf
 set_global_assignment -name VERILOG_FILE SmallBlocks/Simple16adder.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VERILOG_FILE SmallBlocks/Simple16addorsub.v
 set_global_assignment -name VERILOG_FILE SmallBlocks/Simple7addorsub.v
 set_global_assignment -name VERILOG_FILE SmallBlocks/Simple7adder.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE testing/Waveform2.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_global_assignment -name VERILOG_FILE SmallBlocks/Multiply16.v
 set_global_assignment -name VERILOG_FILE SmallBlocks/Simple4adder.v
 set_global_assignment -name VERILOG_FILE SmallBlocks/Simple4addorsub.v
 set_global_assignment -name BDF_FILE Main/MAS.bdf
 set_global_assignment -name VERILOG_FILE SmallBlocks/Swap16.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
 set_global_assignment -name VERILOG_FILE SmallBlocks/Giant8MUX.v
 set_global_assignment -name BDF_FILE Main/Main_CPU.bdf
 set_global_assignment -name BDF_FILE SmallBlocks/Quick_Multiply16.bdf
 set_global_assignment -name SYSTEMVERILOG_FILE SmallBlocks/Multiply16logic.sv
 set_global_assignment -name VERILOG_FILE SmallBlocks/FasterMultiply16.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
 set_global_assignment -name VERILOG_FILE SmallBlocks/carry_look_ahead_adder.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE testing/lac.vwf
 set_global_assignment -name VERILOG_FILE SmallBlocks/carry_look_ahead_adder_cin.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform6.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testing/TestCPU.vwf
 set_global_assignment -name QIP_FILE RAM2.qip
 set_global_assignment -name QIP_FILE Main/RAM2.qip
 set_global_assignment -name VERILOG_FILE selAddrReg.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform7.vwf
+set_global_assignment -name OPTIMIZATION_MODE BALANCED
+set_global_assignment -name ALLOW_REGISTER_RETIMING ON
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE Main/ALU_new.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
