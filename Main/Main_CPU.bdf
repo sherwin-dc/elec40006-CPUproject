@@ -2605,6 +2605,16 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 	(color 85 170 0)
 )
+(connector
+	(text "ir_reg_sel" (rect 986 312 1033 329)(font "Intel Clear" ))
+	(pt 1064 328)
+	(pt 976 328)
+)
+(connector
+	(text "ir_addrReg_wren" (rect 986 328 1067 345)(font "Intel Clear" ))
+	(pt 1064 344)
+	(pt 976 344)
+)
 (junction (pt -280 200))
 (junction (pt -224 216))
 (junction (pt -184 232))
