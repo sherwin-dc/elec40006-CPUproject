@@ -5,14 +5,17 @@ module decoder
 	
 	output reg [15:0] instr_addr1, instr_addr2, data_addr1, data_addr2, new_pc,
 	output reg [2:0] giantmux_sel,
-	output instr_wen2, data_wen1, data_wen2, rd_wen, rs_wen, move_fp, push_up, cnt_en, pc_sload, rsmux_sel, dataA_addr_wen, dataB_addr_wen 
+	output instr_wen2, data_wen1, data_wen2, rd_wen, rs_wen, move_fp, push_up, cnt_en, pc_sload, rsmux_sel, dataA_addr_wen, dataB_addr_wen, 
+	output IR_addr_regSel, IR_addr_wren
 );
 
 wire [9:0] i = {instr[15:11], instr[4:0]}; // wire for inputs
 wire jmp = jump;
 reg [11:0] o;
+reg [1:0] ir;
 
 assign {instr_wen2, data_wen1, data_wen2, rd_wen, rs_wen, move_fp, push_up, cnt_en, pc_sload, rsmux_sel, dataA_addr_wen, dataB_addr_wen} = o;
+assign {IR_addr_regSel, IR_addr_wren} = ir;
 
 always @(*)
 	begin
@@ -24,6 +27,7 @@ data_addr1 = 16'b0;
 data_addr2 = 16'b0;
 giantmux_sel = 3'b0;
 new_pc = 16'b0;
+ir = 2'b00;
 
 
 		casex (i)
@@ -226,6 +230,7 @@ new_pc = 16'b0;
 			o = 12'b000000010x00;
 			instr_addr1 = pc;
 			instr_addr2 = rsdata;
+			ir = 2'b11;
 		end
 
 		10'b1011100100: // SET I, data, set B, no offset
@@ -310,6 +315,7 @@ new_pc = 16'b0;
 			instr_addr1 = pc + 1'd1;
 			instr_addr2 = rsdata;
 			new_pc = pc + 2'd2;
+			ir = 2'b11;
 		end
 
 		10'b101111x1x1: // SET I, instruction, set B, offset
@@ -318,6 +324,7 @@ new_pc = 16'b0;
 			instr_addr1 = pc + 1'd1;
 			instr_addr2 = rsdata + N;
 			new_pc = pc + 2'd2;
+			ir = 2'b11;
 		end
 
 		10'b1000xxxxxx: // PLD A and/or B, data and/or instruction
@@ -339,9 +346,10 @@ new_pc = 16'b0;
 		begin 
 			o = {12'b100000010x00};
 			instr_addr1 = pc;
+			ir = 2'b10;
 		end
 
-		default: // current default is STP
+		default: // current default is STP, maybe default to NOP/
 		begin
 			o = 12'b000000000x00;
 			instr_addr1 = pc - 1'b1;

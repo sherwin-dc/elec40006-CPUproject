@@ -5,12 +5,12 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 /*
 Copyright (C) 2019  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions
-and other software and tools, and any partner logic
-functions, and any output files from any of the foregoing
-(including device programming or simulation files), and any
-associated documentation or information are expressly subject
-to the terms and conditions of the Intel Program License
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
 the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
@@ -182,7 +182,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(output)
-	(rect 512 800 688 816)
+	(rect 512 856 688 872)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (color 255 0 4)(font_size 6)))
 	(text "jump_output" (rect 90 0 150 12)(font "Arial" (color 255 0 4)))
 	(pt 0 8)
@@ -665,7 +665,7 @@ https://fpgasoftware.intel.com/eula.
 		"WIDTH"
 		"16"
 		"Width of I/O, any integer > 0"
-		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
 		(type "PARAMETER_UNSIGNED_DEC")	)
 	(drawing
 		(text "0" (rect 52 31 56 41)(font "Arial" (font_size 6)))
@@ -1020,182 +1020,6 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 496 432 720 768)
-	(text "decoder" (rect 5 0 43 12)(font "Arial" ))
-	(text "decoder" (rect 8 320 46 332)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "instr[15..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "instr[15..0]" (rect 21 27 74 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "N[15..0]" (rect 0 0 40 12)(font "Arial" ))
-		(text "N[15..0]" (rect 21 43 61 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pc[15..0]" (rect 0 0 43 12)(font "Arial" ))
-		(text "pc[15..0]" (rect 21 59 64 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "rddata[15..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "rddata[15..0]" (rect 21 75 83 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "rsdata[15..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "rsdata[15..0]" (rect 21 91 83 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "jump" (rect 0 0 23 12)(font "Arial" ))
-		(text "jump" (rect 21 107 44 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 224 32)
-		(output)
-		(text "instr_addr1[15..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "instr_addr1[15..0]" (rect 119 27 205 39)(font "Arial" ))
-		(line (pt 224 32)(pt 208 32)(line_width 3))
-	)
-	(port
-		(pt 224 48)
-		(output)
-		(text "instr_addr2[15..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "instr_addr2[15..0]" (rect 119 43 205 55)(font "Arial" ))
-		(line (pt 224 48)(pt 208 48)(line_width 3))
-	)
-	(port
-		(pt 224 64)
-		(output)
-		(text "data_addr1[15..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "data_addr1[15..0]" (rect 119 59 205 71)(font "Arial" ))
-		(line (pt 224 64)(pt 208 64)(line_width 3))
-	)
-	(port
-		(pt 224 80)
-		(output)
-		(text "data_addr2[15..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "data_addr2[15..0]" (rect 119 75 205 87)(font "Arial" ))
-		(line (pt 224 80)(pt 208 80)(line_width 3))
-	)
-	(port
-		(pt 224 96)
-		(output)
-		(text "new_pc[15..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "new_pc[15..0]" (rect 134 91 202 103)(font "Arial" ))
-		(line (pt 224 96)(pt 208 96)(line_width 3))
-	)
-	(port
-		(pt 224 112)
-		(output)
-		(text "giantmux_sel[2..0]" (rect 0 0 90 12)(font "Arial" ))
-		(text "giantmux_sel[2..0]" (rect 117 107 207 119)(font "Arial" ))
-		(line (pt 224 112)(pt 208 112)(line_width 3))
-	)
-	(port
-		(pt 224 128)
-		(output)
-		(text "instr_wen2" (rect 0 0 51 12)(font "Arial" ))
-		(text "instr_wen2" (rect 149 123 200 135)(font "Arial" ))
-		(line (pt 224 128)(pt 208 128))
-	)
-	(port
-		(pt 224 144)
-		(output)
-		(text "data_wen1" (rect 0 0 51 12)(font "Arial" ))
-		(text "data_wen1" (rect 149 139 200 151)(font "Arial" ))
-		(line (pt 224 144)(pt 208 144))
-	)
-	(port
-		(pt 224 160)
-		(output)
-		(text "data_wen2" (rect 0 0 51 12)(font "Arial" ))
-		(text "data_wen2" (rect 149 155 200 167)(font "Arial" ))
-		(line (pt 224 160)(pt 208 160))
-	)
-	(port
-		(pt 224 176)
-		(output)
-		(text "rd_wen" (rect 0 0 34 12)(font "Arial" ))
-		(text "rd_wen" (rect 166 171 200 183)(font "Arial" ))
-		(line (pt 224 176)(pt 208 176))
-	)
-	(port
-		(pt 224 192)
-		(output)
-		(text "rs_wen" (rect 0 0 34 12)(font "Arial" ))
-		(text "rs_wen" (rect 166 187 200 199)(font "Arial" ))
-		(line (pt 224 192)(pt 208 192))
-	)
-	(port
-		(pt 224 208)
-		(output)
-		(text "move_fp" (rect 0 0 44 12)(font "Arial" ))
-		(text "move_fp" (rect 162 203 206 215)(font "Arial" ))
-		(line (pt 224 208)(pt 208 208))
-	)
-	(port
-		(pt 224 224)
-		(output)
-		(text "push_up" (rect 0 0 41 12)(font "Arial" ))
-		(text "push_up" (rect 162 219 203 231)(font "Arial" ))
-		(line (pt 224 224)(pt 208 224))
-	)
-	(port
-		(pt 224 240)
-		(output)
-		(text "cnt_en" (rect 0 0 33 12)(font "Arial" ))
-		(text "cnt_en" (rect 171 235 204 247)(font "Arial" ))
-		(line (pt 224 240)(pt 208 240))
-	)
-	(port
-		(pt 224 256)
-		(output)
-		(text "pc_sload" (rect 0 0 43 12)(font "Arial" ))
-		(text "pc_sload" (rect 160 251 203 263)(font "Arial" ))
-		(line (pt 224 256)(pt 208 256))
-	)
-	(port
-		(pt 224 272)
-		(output)
-		(text "rsmux_sel" (rect 0 0 50 12)(font "Arial" ))
-		(text "rsmux_sel" (rect 154 267 204 279)(font "Arial" ))
-		(line (pt 224 272)(pt 208 272))
-	)
-	(port
-		(pt 224 288)
-		(output)
-		(text "dataA_addr_wen" (rect 0 0 80 12)(font "Arial" ))
-		(text "dataA_addr_wen" (rect 119 283 199 295)(font "Arial" ))
-		(line (pt 224 288)(pt 208 288))
-	)
-	(port
-		(pt 224 304)
-		(output)
-		(text "dataB_addr_wen" (rect 0 0 80 12)(font "Arial" ))
-		(text "dataB_addr_wen" (rect 120 299 200 311)(font "Arial" ))
-		(line (pt 224 304)(pt 208 304))
-	)
-	(drawing
-		(rectangle (rect 16 16 208 320))
-	)
-)
-(symbol
 	(rect -1648 416 -1480 496)
 	(text "simple16adder" (rect 5 0 75 12)(font "Arial" ))
 	(text "inst4" (rect 8 64 30 81)(font "Intel Clear" ))
@@ -1244,7 +1068,7 @@ https://fpgasoftware.intel.com/eula.
 		"LPM_WIDTH"
 		"16"
 		"Width of output, any integer > 0"
-		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" 
 	)
 	(drawing
 		(text "(cvalue)" (rect 21 26 68 40)(font "Arial" (font_size 8)))
@@ -1530,6 +1354,196 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(drawing
 		(rectangle (rect 16 16 208 128))
+	)
+)
+(symbol
+	(rect 496 432 720 800)
+	(text "decoder" (rect 5 0 43 12)(font "Arial" ))
+	(text "decoder" (rect 8 352 46 364)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "instr[15..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "instr[15..0]" (rect 21 27 74 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "N[15..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "N[15..0]" (rect 21 43 61 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "pc[15..0]" (rect 0 0 43 12)(font "Arial" ))
+		(text "pc[15..0]" (rect 21 59 64 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "rddata[15..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "rddata[15..0]" (rect 21 75 83 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "rsdata[15..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "rsdata[15..0]" (rect 21 91 83 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "jump" (rect 0 0 23 12)(font "Arial" ))
+		(text "jump" (rect 21 107 44 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "instr_addr1[15..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "instr_addr1[15..0]" (rect 131 27 203 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(port
+		(pt 224 48)
+		(output)
+		(text "instr_addr2[15..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "instr_addr2[15..0]" (rect 131 43 203 55)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48)(line_width 3))
+	)
+	(port
+		(pt 224 64)
+		(output)
+		(text "data_addr1[15..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "data_addr1[15..0]" (rect 131 59 203 71)(font "Arial" ))
+		(line (pt 224 64)(pt 208 64)(line_width 3))
+	)
+	(port
+		(pt 224 80)
+		(output)
+		(text "data_addr2[15..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "data_addr2[15..0]" (rect 131 75 203 87)(font "Arial" ))
+		(line (pt 224 80)(pt 208 80)(line_width 3))
+	)
+	(port
+		(pt 224 96)
+		(output)
+		(text "new_pc[15..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "new_pc[15..0]" (rect 146 91 203 103)(font "Arial" ))
+		(line (pt 224 96)(pt 208 96)(line_width 3))
+	)
+	(port
+		(pt 224 112)
+		(output)
+		(text "giantmux_sel[2..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "giantmux_sel[2..0]" (rect 127 107 203 119)(font "Arial" ))
+		(line (pt 224 112)(pt 208 112)(line_width 3))
+	)
+	(port
+		(pt 224 128)
+		(output)
+		(text "instr_wen2" (rect 0 0 51 12)(font "Arial" ))
+		(text "instr_wen2" (rect 160 123 203 135)(font "Arial" ))
+		(line (pt 224 128)(pt 208 128))
+	)
+	(port
+		(pt 224 144)
+		(output)
+		(text "data_wen1" (rect 0 0 51 12)(font "Arial" ))
+		(text "data_wen1" (rect 160 139 203 151)(font "Arial" ))
+		(line (pt 224 144)(pt 208 144))
+	)
+	(port
+		(pt 224 160)
+		(output)
+		(text "data_wen2" (rect 0 0 51 12)(font "Arial" ))
+		(text "data_wen2" (rect 160 155 203 167)(font "Arial" ))
+		(line (pt 224 160)(pt 208 160))
+	)
+	(port
+		(pt 224 176)
+		(output)
+		(text "rd_wen" (rect 0 0 34 12)(font "Arial" ))
+		(text "rd_wen" (rect 175 171 203 183)(font "Arial" ))
+		(line (pt 224 176)(pt 208 176))
+	)
+	(port
+		(pt 224 192)
+		(output)
+		(text "rs_wen" (rect 0 0 34 12)(font "Arial" ))
+		(text "rs_wen" (rect 175 187 203 199)(font "Arial" ))
+		(line (pt 224 192)(pt 208 192))
+	)
+	(port
+		(pt 224 208)
+		(output)
+		(text "move_fp" (rect 0 0 44 12)(font "Arial" ))
+		(text "move_fp" (rect 166 203 203 215)(font "Arial" ))
+		(line (pt 224 208)(pt 208 208))
+	)
+	(port
+		(pt 224 224)
+		(output)
+		(text "push_up" (rect 0 0 41 12)(font "Arial" ))
+		(text "push_up" (rect 169 219 203 231)(font "Arial" ))
+		(line (pt 224 224)(pt 208 224))
+	)
+	(port
+		(pt 224 240)
+		(output)
+		(text "cnt_en" (rect 0 0 33 12)(font "Arial" ))
+		(text "cnt_en" (rect 176 235 203 247)(font "Arial" ))
+		(line (pt 224 240)(pt 208 240))
+	)
+	(port
+		(pt 224 256)
+		(output)
+		(text "pc_sload" (rect 0 0 43 12)(font "Arial" ))
+		(text "pc_sload" (rect 167 251 203 263)(font "Arial" ))
+		(line (pt 224 256)(pt 208 256))
+	)
+	(port
+		(pt 224 272)
+		(output)
+		(text "rsmux_sel" (rect 0 0 50 12)(font "Arial" ))
+		(text "rsmux_sel" (rect 161 267 203 279)(font "Arial" ))
+		(line (pt 224 272)(pt 208 272))
+	)
+	(port
+		(pt 224 288)
+		(output)
+		(text "dataA_addr_wen" (rect 0 0 80 12)(font "Arial" ))
+		(text "dataA_addr_wen" (rect 136 283 203 295)(font "Arial" ))
+		(line (pt 224 288)(pt 208 288))
+	)
+	(port
+		(pt 224 304)
+		(output)
+		(text "dataB_addr_wen" (rect 0 0 80 12)(font "Arial" ))
+		(text "dataB_addr_wen" (rect 136 299 203 311)(font "Arial" ))
+		(line (pt 224 304)(pt 208 304))
+	)
+	(port
+		(pt 224 320)
+		(output)
+		(text "IR_addr_regSel" (rect 0 0 75 12)(font "Arial" ))
+		(text "IR_addr_regSel" (rect 140 315 203 327)(font "Arial" ))
+		(line (pt 224 320)(pt 208 320))
+	)
+	(port
+		(pt 224 336)
+		(output)
+		(text "IR_addr_wren" (rect 0 0 67 12)(font "Arial" ))
+		(text "IR_addr_wren" (rect 147 331 203 343)(font "Arial" ))
+		(line (pt 224 336)(pt 208 336))
+	)
+	(drawing
+		(rectangle (rect 16 16 208 352))
 	)
 )
 (connector
@@ -2068,12 +2082,6 @@ https://fpgasoftware.intel.com/eula.
 	(color 255 0 4)
 )
 (connector
-	(text "jump" (rect 450 792 473 809)(font "Intel Clear" (color 255 0 4)))
-	(pt 512 808)
-	(pt 440 808)
-	(color 255 0 4)
-)
-(connector
 	(pt 680 168)
 	(pt 624 168)
 	(bus)
@@ -2580,6 +2588,39 @@ https://fpgasoftware.intel.com/eula.
 	(pt 104 424)
 	(pt 176 424)
 	(color 197 131 0)
+)
+(connector
+	(text "instr_RAM_regSel" (rect 986 312 1072 329)(font "Intel Clear" ))
+	(pt 1064 328)
+	(pt 976 328)
+)
+(connector
+	(text "instr_RAM_addrReg_wren" (rect 976 328 1101 345)(font "Intel Clear" ))
+	(pt 1064 344)
+	(pt 976 344)
+)
+(connector
+	(text "rsdata[15..0]" (rect 1322 280 1381 297)(font "Intel Clear" (color 85 170 0)))
+	(pt 1392 296)
+	(pt 1312 296)
+	(bus)
+	(color 85 170 0)
+)
+(connector
+	(text "jump" (rect 450 848 473 865)(font "Intel Clear" (color 255 0 4)))
+	(pt 512 864)
+	(pt 440 864)
+	(color 255 0 4)
+)
+(connector
+	(text "instr_RAM_regSel" (rect 730 736 816 753)(font "Intel Clear" ))
+	(pt 808 752)
+	(pt 720 752)
+)
+(connector
+	(text "instr_RAM_addrReg_wren" (rect 720 752 845 769)(font "Intel Clear" ))
+	(pt 808 768)
+	(pt 720 768)
 )
 (junction (pt -280 200))
 (junction (pt -224 216))
