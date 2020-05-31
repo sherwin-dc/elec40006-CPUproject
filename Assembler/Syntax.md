@@ -53,7 +53,7 @@ COND: compare condition
 - LS: less than - Rd < Rs or Rd < N
 - EZ: equal to zero - Rd == 0
 - MI: 2s-complement negative - Rd < 0 (2s-complement)
-- NP: null pointer - Rd == nullptr 
+- NP: null pointer - Rd == nullptr
 
 ### JMP
 > JMP Rd<br/>
@@ -126,6 +126,8 @@ M (optional): which RAM to access
 - D: data RAM (default)
 - I: instruction RAM
 
+(indicate x in the register field if not in use)
+
 ### PST
 > PST Rd Rs {M}
 
@@ -134,6 +136,8 @@ Rs: source register for PORTB<br/>
 M (optional): which RAM to access
 - D: data RAM (default)
 - I: instruction RAM
+
+(indicate x in the register field if not in use)
 
 ### NOP
 > NOP
