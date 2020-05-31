@@ -95,7 +95,6 @@ ir = 2'b00;
 		end
 
 		
-
 		10'b00100xxxxx: // JMP R
 		begin
 			o = 12'b000000001x00;
@@ -200,32 +199,16 @@ ir = 2'b00;
 			instr_addr2 = pc;
 		end
 
-		10'b10110001xx: // SET R, data, set B only
+		10'b101100xxxx: // SET R, data, set A and/or B
 		begin 
-			o = 12'b000000010x01;
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
-			data_addr2 = rsdata;
-		end
-
-		10'b10110010xx: // SET R, data, set A only
-		begin 
-			o = 12'b000000010x10;
-			instr_addr1 = pc;
-			instr_addr2 = pc + 1'd1;
-			data_addr1 = rddata;
-		end
-
-		10'b10110011xx: // SET R, data, set A & B
-		begin 
-			o = 12'b000000010x11;
+			o = {10'b000000010x, instr[3], instr[2]};
 			instr_addr1 = pc;
 			instr_addr2 = pc + 1'd1;
 			data_addr1 = rddata;
 			data_addr2 = rsdata;
 		end
 
-		10'b101101x1xx: // SET R, instruction, set B only
+		10'b101101x1xx: // SET R, instruction, set B
 		begin 
 			o = 12'b000000010x00;
 			instr_addr1 = pc;
@@ -233,27 +216,9 @@ ir = 2'b00;
 			ir = 2'b11;
 		end
 
-		10'b1011100100: // SET I, data, set B, no offset
+		10'b101110xx00: // SET I, data, set A and/or B, no offset
 		begin 
-			o = 12'b000000001x01;
-			instr_addr1 = pc + 1'd1;
-			instr_addr2 = pc + 2'd2;
-			new_pc = pc + 2'd2;
-			data_addr2 = rsdata;
-		end
-
-		10'b1011101000: // SET I, data, set A, no offset
-		begin 
-			o = 12'b000000001x10;
-			instr_addr1 = pc + 1'd1;
-			instr_addr2 = pc + 2'd2;
-			new_pc = pc + 2'd2;
-			data_addr1 = N;
-		end
-
-		10'b1011101100: // SET I, data, set A & B, no offset
-		begin 
-			o = 12'b000000001x11;
+			o = {10'b000000010x, instr[3], instr[2]};
 			instr_addr1 = pc + 1'd1;
 			instr_addr2 = pc + 2'd2;
 			new_pc = pc + 2'd2;
@@ -349,7 +314,7 @@ ir = 2'b00;
 			ir = 2'b10;
 		end
 
-		default: // current default is STP, maybe default to NOP/
+		default: // current default is STP, maybe default to NOP?
 		begin
 			o = 12'b000000000x00;
 			instr_addr1 = pc - 1'b1;
