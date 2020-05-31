@@ -25,9 +25,17 @@ INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmsy8
 INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmsy6.tfm
 OUTPUT c:\Users\sherw\Documents\DECA\elec40006-CPUproject\Report\report.pdf
 INPUT C:\Users\sherw\AppData\Local\MiKTeX\2.9\pdftex\config\pdftex.map
+INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmbx12.tfm
+INPUT c:\Users\sherw\Documents\DECA\elec40006-CPUproject\Report\report.toc
+INPUT c:\Users\sherw\Documents\DECA\elec40006-CPUproject\Report\report.toc
+OUTPUT c:\Users\sherw\Documents\DECA\elec40006-CPUproject\Report\report.toc
+INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmbx12.tfm
 INPUT c:\Users\sherw\Documents\DECA\elec40006-CPUproject\Report\report.aux
+INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx10.pfb
+INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\sherw\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr10.pfb
