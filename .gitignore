@@ -3,3 +3,9 @@ incremental_db/*
 output_files/*
 simulation/*
 .qsys_edit/*
+Report/report.aux
+Report/report.fdb_latexmk
+Report/report.fls
+Report/report.log
+Report/report.pdf
+Report/report.synctex.gz
