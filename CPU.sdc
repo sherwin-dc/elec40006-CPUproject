@@ -39,7 +39,7 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {clock} -period 1.000 -waveform { 0.000 0.500 } [get_ports {clock}]
+create_clock -name {clock} -period 1.000 [get_ports {clock}]
 
 
 #**************************************************************
@@ -57,11 +57,6 @@ create_clock -name {clock} -period 1.000 -waveform { 0.000 0.500 } [get_ports {c
 #**************************************************************
 # Set Clock Uncertainty
 #**************************************************************
-
-set_clock_uncertainty -rise_from [get_clocks {clock}] -rise_to [get_clocks {clock}] -setup 0.080  
-set_clock_uncertainty -rise_from [get_clocks {clock}] -fall_to [get_clocks {clock}] -setup 0.080  
-set_clock_uncertainty -fall_from [get_clocks {clock}] -rise_to [get_clocks {clock}] -setup 0.080  
-set_clock_uncertainty -fall_from [get_clocks {clock}] -fall_to [get_clocks {clock}] -setup 0.080  
 
 
 #**************************************************************
