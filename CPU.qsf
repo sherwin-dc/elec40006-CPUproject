@@ -130,9 +130,6 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 
 		# Incremental Compilation Assignments
 		# ===================================
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
 	# end DESIGN_PARTITION(Top)
 	# -------------------------
@@ -145,4 +142,12 @@ set_global_assignment -name POWER_USE_INPUT_FILES ON
 set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
 set_global_assignment -name POWER_INPUT_FILE_NAME simulation/qsim/CPU.msim.vcd -section_id cpu.msim.vcd
 set_instance_assignment -name POWER_READ_INPUT_FILE cpu.msim.vcd -to Main_CPU
+set_global_assignment -name BDF_FILE testing/test_Adder.bdf
+set_global_assignment -name VERILOG_FILE SmallBlocks/alt_carry_look_ahead_adder_cin7.v
+set_global_assignment -name VERILOG_FILE SmallBlocks/alt_carry_look_ahead_adder_cin.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform10.vwf
+set_global_assignment -name SYSTEMVERILOG_FILE SmallBlocks/new_quick_multiply.sv
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
