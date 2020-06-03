@@ -1,0 +1,33 @@
+module new_quick_multiply_16
+(
+input reg [15:0] A, B,
+output reg [15:0] Out
+
+
+);
+
+reg [15:0][15:0] R;
+reg [7:0][15:0] A1;
+reg [3:0][15:0] A2;
+reg [1:0][15:0] A3;
+
+Multiply16logic Mult_logic(.A(A) , .B(B) , .R(R));
+alt_carry_look_ahead_adder_cin Add1(.A(R[0][15:0]) , .B(R[1][15:0]) , .cin(1'b0) , .R(A1[0][15:0]);
+alt_carry_look_ahead_adder_cin Add2(.A(R[2][15:0]) , .B(R[3][15:0]) , .cin(1'b0) , .R(A1[1][15:0]);
+alt_carry_look_ahead_adder_cin Add3(.A(R[4][15:0]) , .B(R[5][15:0]) , .cin(1'b0) , .R(A1[2][15:0]);
+alt_carry_look_ahead_adder_cin Add4(.A(R[6][15:0]) , .B(R[7][15:0]) , .cin(1'b0) , .R(A1[3][15:0]);
+alt_carry_look_ahead_adder_cin Add5(.A(R[8][15:0]) , .B(R[9][15:0]) , .cin(1'b0) , .R(A1[4][15:0]);
+alt_carry_look_ahead_adder_cin Add6(.A(R[10][15:0]) , .B(R[11][15:0]) , .cin(1'b0) , .R(A1[5][15:0]);
+alt_carry_look_ahead_adder_cin Add7(.A(R[12][15:0]) , .B(R[13][15:0]) , .cin(1'b0) , .R(A1[6][15:0]);
+alt_carry_look_ahead_adder_cin Add8(.A(R[14][15:0]) , .B(R[15][15:0]) , .cin(1'b0) , .R(A1[7][15:0]);
+
+alt_carry_look_ahead_adder_cin Add9(.A(A1[0][15:0]) , .B(A1[1][15:0]) , .cin(1'b0) , .R(A2[0][15:0]);
+alt_carry_look_ahead_adder_cin Add10(.A(A1[2][15:0]) , .B(A1[3][15:0]) , .cin(1'b0) , .R(A2[1][15:0]);
+alt_carry_look_ahead_adder_cin Add11(.A(A1[4][15:0]) , .B(A1[5][15:0]) , .cin(1'b0) , .R(A2[2][15:0]);
+alt_carry_look_ahead_adder_cin Add12(.A(A1[6][15:0]) , .B(A1[7][15:0]) , .cin(1'b0) , .R(A2[3][15:0]);
+
+alt_carry_look_ahead_adder_cin Add13(.A(A2[0][15:0]) , .B(A2[1][15:0]) , .cin(1'b0) , .R(A3[0][15:0]);
+alt_carry_look_ahead_adder_cin Add14(.A(A2[2][15:0]) , .B(A2[3][15:0]) , .cin(1'b0) , .R(A3[1][15:0]);
+
+alt_carry_look_ahead_adder_cin Add15(.A(A3[0][15:0]) , .B(A3[1][15:0]) , .cin(1'b0) , .R(Out);
+
