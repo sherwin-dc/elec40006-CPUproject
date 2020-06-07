@@ -39,7 +39,7 @@ ir = 2'b00;
 		end
 
 		10'b00001xxxxx: // CALL
-		begin 
+		begin ===
 			o = 12'b000101001x00;
 			giantmux_sel = 3'b001; // PC
 			instr_addr1 = N;
