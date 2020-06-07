@@ -179,7 +179,7 @@ ir = 2'b00;
 			o = {7'b0001000, !instr[11], instr[11], 3'bx00};
 			instr_addr1 = pc + instr[11];
 			instr_addr2 = pc + instr[11] + 1'd1;
-			new_pc = pc + 2'd2;
+			new_pc = pc + instr[11] + 1'd1;
 			giantmux_sel = 3'b101; // masout
 		end 
 
@@ -188,7 +188,7 @@ ir = 2'b00;
 			o = {7'b0001000, !instr[11], instr[11], 3'bx00};
 			instr_addr1 = pc + instr[11];
 			instr_addr2 = pc + instr[11] + 1'd1;
-			new_pc = pc + 2'd2;
+			new_pc = pc + instr[11] + 1'd1;
 			giantmux_sel = {1'b0, instr[11], 1'b0}; // rsdata = 000, N = 010
 		end
 
