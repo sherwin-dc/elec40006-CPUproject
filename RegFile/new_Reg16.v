@@ -53,13 +53,24 @@ always @(posedge Clock) begin
                     ReadReg[MoveFP_Reg_addr] <= Rd_Data;
                 end
             end
+
+            // Now copy all other addreses to ReadReg
+            // This is for Call where one address was written to
+            for(i=0 ; i<8 ; i=i+1) begin
+                if(i != MoveFP_Reg_addr)
+                    ReadReg[i] <= Registers[New_FP + i];
+            end
+
+
+        end else begin
+            // Now copy all addreses to ReadReg
+            // This is for RTN where no address was written to
+            for(i=0 ; i<8 ; i=i+1) begin
+                    ReadReg[i] <= Registers[New_FP + i];
+            end
         end
 
-        // Now copy all other addreses to ReadReg
-        for(i=0 ; i<8 ; i=i+1) begin
-            if(i != MoveFP_Reg_addr)
-                ReadReg[i] <= Registers[New_FP + i];
-        end
+        
 
         
     end else begin // If FP is not being changed, write Rd and Rs data to ReadReg
