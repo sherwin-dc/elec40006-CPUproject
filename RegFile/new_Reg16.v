@@ -21,7 +21,7 @@ reg [2:0] MoveFP_Reg_addr;
 integer i;
 
 // To read data without clock
-always @(posedge Clock) begin
+always @(*) begin
  Rd_Out = ReadReg[Actual_Rd];
  Rs_Out = ReadReg[Actual_Rs];
  Rm_Out = ReadReg[Actual_Rm];

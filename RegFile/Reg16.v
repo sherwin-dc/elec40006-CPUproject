@@ -20,7 +20,7 @@ assign Rm_Out = RmOut;
 
 
 // To write data on positive edge of clock
-always @(posedge Clock) begin
+always @(*) begin
     if(Rd_Wen)
         case(Rd_Addr)
             4'd0 : R0 <= Rd_Data;

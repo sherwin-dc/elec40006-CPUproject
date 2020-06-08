@@ -1,13 +1,13 @@
 module CMP
 (
 	input [15:0] rddata, rsdata, N,
-	input [4:0] instruction,
+	input [3:0] instruction,
 	
 	output jump
 
 );
 
-wire [4:0] cond = instruction; 
+wire [3:0] cond = instruction; 
 
 reg result;
 
