@@ -16,55 +16,8 @@ assign Rd_Out = RdOut;
 assign Rs_Out = RsOut;
 assign Rm_Out = RmOut;
 
-
-
-
-// To write data on positive edge of clock
-always @(*) begin
-    if(Rd_Wen)
-        case(Rd_Addr)
-            4'd0 : R0 <= Rd_Data;
-            4'd1 : R1 <= Rd_Data;
-            4'd2 : R2 <= Rd_Data;
-            4'd3 : R3 <= Rd_Data;
-            4'd4 : R4 <= Rd_Data;
-            4'd5 : R5 <= Rd_Data;
-            4'd6 : R6 <= Rd_Data;
-            4'd7 : R7 <= Rd_Data;
-            4'd8 : R8 <= Rd_Data;
-            4'd9 : R9 <= Rd_Data;
-            4'd10 : R10 <= Rd_Data;
-            4'd11 : R11 <= Rd_Data;
-            4'd12 : R12 <= Rd_Data;
-            4'd13 : R13 <= Rd_Data;
-            4'd14 : R14 <= Rd_Data;
-            4'd15 : R15 <= Rd_Data;
-        endcase
-    
-    if(Rs_Wen)
-        case(Rs_Addr)
-            4'd0 : R0 <= Rs_Data;
-            4'd1 : R1 <= Rs_Data;
-            4'd2 : R2 <= Rs_Data;
-            4'd3 : R3 <= Rs_Data;
-            4'd4 : R4 <= Rs_Data;
-            4'd5 : R5 <= Rs_Data;
-            4'd6 : R6 <= Rs_Data;
-            4'd7 : R7 <= Rs_Data;
-            4'd8 : R8 <= Rs_Data;
-            4'd9 : R9 <= Rs_Data;
-            4'd10 : R10 <= Rs_Data;
-            4'd11 : R11 <= Rs_Data;
-            4'd12 : R12 <= Rs_Data;
-            4'd13 : R13 <= Rs_Data;
-            4'd14 : R14 <= Rs_Data;
-            4'd15 : R15 <= Rs_Data;
-        endcase
-    
-end
-
 // To read data without clock
-always @(posedge Clock) begin
+always @(*) begin
     case(Rd_Addr)
         4'd0 : RdOut = R0;
         4'd1 : RdOut = R1;
@@ -122,4 +75,52 @@ always @(posedge Clock) begin
         4'd15 : RmOut = R15;
     endcase
 end
+
+
+
+// To write data on positive edge of clock
+always @(posedge Clock) begin
+    if(Rd_Wen)
+        case(Rd_Addr)
+            4'd0 : R0 <= Rd_Data;
+            4'd1 : R1 <= Rd_Data;
+            4'd2 : R2 <= Rd_Data;
+            4'd3 : R3 <= Rd_Data;
+            4'd4 : R4 <= Rd_Data;
+            4'd5 : R5 <= Rd_Data;
+            4'd6 : R6 <= Rd_Data;
+            4'd7 : R7 <= Rd_Data;
+            4'd8 : R8 <= Rd_Data;
+            4'd9 : R9 <= Rd_Data;
+            4'd10 : R10 <= Rd_Data;
+            4'd11 : R11 <= Rd_Data;
+            4'd12 : R12 <= Rd_Data;
+            4'd13 : R13 <= Rd_Data;
+            4'd14 : R14 <= Rd_Data;
+            4'd15 : R15 <= Rd_Data;
+        endcase
+    
+    if(Rs_Wen)
+        case(Rs_Addr)
+            4'd0 : R0 <= Rs_Data;
+            4'd1 : R1 <= Rs_Data;
+            4'd2 : R2 <= Rs_Data;
+            4'd3 : R3 <= Rs_Data;
+            4'd4 : R4 <= Rs_Data;
+            4'd5 : R5 <= Rs_Data;
+            4'd6 : R6 <= Rs_Data;
+            4'd7 : R7 <= Rs_Data;
+            4'd8 : R8 <= Rs_Data;
+            4'd9 : R9 <= Rs_Data;
+            4'd10 : R10 <= Rs_Data;
+            4'd11 : R11 <= Rs_Data;
+            4'd12 : R12 <= Rs_Data;
+            4'd13 : R13 <= Rs_Data;
+            4'd14 : R14 <= Rs_Data;
+            4'd15 : R15 <= Rs_Data;
+        endcase
+    
+end
+
+
 endmodule
