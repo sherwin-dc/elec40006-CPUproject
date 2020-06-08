@@ -128,22 +128,22 @@ ir = 2'b00;
 			giantmux_sel = 3'b100; // aluout
 		end 
 
-		10'b01010xxx1x: // SUB R, jump cond failed
-		begin 
-			if(jmp) begin //passed jump
-				o = 12'b000100001x00;
-				instr_addr1 = pc + instr[0] + 1'd1;
-				instr_addr2 = pc + instr[0] + 2'd2;
-				new_pc = pc + instr[0] + 2'd2;
-				giantmux_sel = 3'b100; // aluout
-			end else begin //failed jump
-				o = 12'b000100010x00;
-				instr_addr1 = pc;
-				instr_addr2 = pc + 1'd1;
-				giantmux_sel = 3'b100; // aluout
-			end
-			
-		end
+//		10'b01010xxx1x: // SUB R, jump cond failed
+//		begin 
+//			if(jmp) begin //passed jump
+//				o = 12'b000100001x00;
+//				instr_addr1 = pc + instr[0] + 1'd1;
+//				instr_addr2 = pc + instr[0] + 2'd2;
+//				new_pc = pc + instr[0] + 2'd2;
+//				giantmux_sel = 3'b100; // aluout
+//			end else begin //failed jump
+//				o = 12'b000100010x00;
+//				instr_addr1 = pc;
+//				instr_addr2 = pc + 1'd1;
+//				giantmux_sel = 3'b100; // aluout
+//			end
+//			
+//		end
 
 
 		10'b01011xxx0x: // SUB I, no jump cond
@@ -155,23 +155,23 @@ ir = 2'b00;
 			giantmux_sel = 3'b100; // aluout
 		end 
 
-		10'b01011xxx1x: // SUB I, jump cond failed
-		begin
-			if(jmp) begin //passed jump
-				o = 12'b000100001x00;
-				instr_addr1 = pc + instr[0] + 2'd2;
-				instr_addr2 = pc + instr[0] + 2'd3;
-				new_pc = pc + instr[0] + 2'd3;
-				giantmux_sel = 3'b100; // aluout
-			end else begin //failed jump
-				o = 12'b000100001x00;
-				instr_addr1 = pc + 1'd1;
-				instr_addr2 = pc + 2'd2;
-				new_pc = pc + 2'd2;
-				giantmux_sel = 3'b100; // aluout
-			end
-			
-		end 
+//		10'b01011xxx1x: // SUB I, jump cond failed
+//		begin
+//			if(jmp) begin //passed jump
+//				o = 12'b000100001x00;
+//				instr_addr1 = pc + instr[0] + 2'd2;
+//				instr_addr2 = pc + instr[0] + 2'd3;
+//				new_pc = pc + instr[0] + 2'd3;
+//				giantmux_sel = 3'b100; // aluout
+//			end else begin //failed jump
+//				o = 12'b000100001x00;
+//				instr_addr1 = pc + 1'd1;
+//				instr_addr2 = pc + 2'd2;
+//				new_pc = pc + 2'd2;
+//				giantmux_sel = 3'b100; // aluout
+//			end
+//			
+//		end 
 
 
 		10'b0110xxxxxx: // MAS R and/or I

@@ -150,6 +150,13 @@ set_global_assignment -name VERILOG_FILE SmallBlocks/carry_look_ahead_adder_cin8
 set_global_assignment -name BDF_FILE SmallBlocks/two_CLA_8_adders.bdf
 set_global_assignment -name POWER_INPUT_FILE_NAME simulation/qsim/CPU.msim.vcd -section_id cpu.msim.vcd
 set_instance_assignment -name POWER_READ_INPUT_FILE cpu.msim.vcd -to Main_CPU
+set_global_assignment -name VERILOG_FILE RegFile/new_Reg128.v
+set_global_assignment -name BDF_FILE RegFile/RegisterStackLite.bdf
+set_global_assignment -name BDF_FILE RegFile/new_RegisterStackLite.bdf
+set_global_assignment -name VERILOG_FILE RegFile/new_Reg16.v
+set_global_assignment -name SYSTEMVERILOG_FILE RegFile/new_Reg16.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RegFile/new_Reg16_sv.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RegFile/Window_reader.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

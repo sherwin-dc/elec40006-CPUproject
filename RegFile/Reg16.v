@@ -16,7 +16,6 @@ assign Rd_Out = RdOut;
 assign Rs_Out = RsOut;
 assign Rm_Out = RmOut;
 
-
 // To read data without clock
 always @(*) begin
     case(Rd_Addr)
@@ -77,6 +76,8 @@ always @(*) begin
     endcase
 end
 
+
+
 // To write data on positive edge of clock
 always @(posedge Clock) begin
     if(Rd_Wen)
@@ -120,5 +121,6 @@ always @(posedge Clock) begin
         endcase
     
 end
+
 
 endmodule
