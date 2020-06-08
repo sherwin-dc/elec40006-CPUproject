@@ -154,7 +154,6 @@ set_global_assignment -name VERILOG_FILE RegFile/new_Reg128.v
 set_global_assignment -name BDF_FILE RegFile/RegisterStackLite.bdf
 set_global_assignment -name BDF_FILE RegFile/new_RegisterStackLite.bdf
 set_global_assignment -name VERILOG_FILE RegFile/new_Reg16.v
-set_global_assignment -name SYSTEMVERILOG_FILE RegFile/new_Reg16.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RegFile/new_Reg16_sv.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RegFile/Window_reader.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
@@ -167,4 +166,7 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name BDF_FILE new_RegisterStack.bdf
 set_global_assignment -name SYSTEMVERILOG_FILE RegFile/new_Reg128_sv.sv
+set_global_assignment -name VERILOG_FILE SmallBlocks/adder_to_use_16_bit.v
+set_global_assignment -name BSF_FILE SmallBlocks/new_quick_multiply_16.bsf
+set_global_assignment -name BDF_FILE Main/new_MAS.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

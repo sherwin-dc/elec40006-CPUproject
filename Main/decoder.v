@@ -182,6 +182,15 @@ ir = 2'b00;
 			new_pc = pc + instr[11] + 1'd1;
 			giantmux_sel = 3'b101; // masout
 		end 
+		
+		10'b0011xxxxxx: // MUL R and/or I
+		begin 
+			o = {7'b0000000, !instr[11], instr[11], 3'bx00};
+			instr_addr1 = pc + instr[11];
+			instr_addr2 = pc + instr[11] + 1'd1;
+			new_pc = pc + instr[11] + 1'd1;
+			
+		end 
 
 		10'b0111xxxxxx: // MOV R and/or I
 		begin 
