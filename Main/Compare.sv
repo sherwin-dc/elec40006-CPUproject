@@ -13,7 +13,7 @@ reg [15:0] R;
 reg WideOr;
 
 // Now do subtraction
-carry_look_ahead_adder_cin inst1 (.A(A), .B(~B), .cin(1'b1), .R(R));
+adder_to_use_16_bit inst1 (.A(A), .B(~B), .cin(1'b1), .R(R));
 
 always @(*) begin
 // initial value of A and B

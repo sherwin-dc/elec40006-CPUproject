@@ -2,8 +2,8 @@ module carry_look_ahead_adder_cin8
 (
 input [7:0] A, B,
 input cin,
-output [7:0] R,
-output cout
+output [7:0] R
+
 );
 wire p0,  p1,  p2,  p3,  p4,  p5,  p6,  p7; 
 wire g0,  g1,  g2,  g3,  g4,  g5,  g6,  g7; 
@@ -35,7 +35,6 @@ assign c4 = g3 | (p3 & g2) | (p3 & p2 & g1) | (p3 & p2 & p1 & g0) | (p3 & p2 & p
 assign c5 = g4 | (p4 & g3) | (p4 & p3 & g2) | (p4 & p3 & p2 & g1) | (p4 & p3 & p2 & p1 & g0) | (p4 & p3 & p2 & p1 & p0 & cin);
 assign c6 = g5 | (p5 & g4) | (p5 & p4 & g3) | (p5 & p4 & p3 & g2) | (p5 & p4 & p3 & p2 & g1) | (p5 & p4 & p3 & p2 & p1 & g0) | (p5 & p4 & p3 & p2 & p1 & p0 & cin);
 assign c7 = g6 | (p6 & g5) | (p6 & p5 & g4) | (p6 & p5 & p4 & g3) | (p6 & p5 & p4 & p3 & g2) | (p6 & p5 & p4 & p3 & p2 & g1) | (p6 & p5 & p4 & p3 & p2 & p1 & g0) | (p6 & p5 & p4 & p3 & p2 & p1 & p0 & cin);
-assign c8 = g7 | (p7 & g6) | (p7 & p6 & g5) | (p7 & p6 & p5 & g4) | (p7 & p6 & p5 & p4 & g3) | (p7 & p6 & p5 & p4 & p3 & g2) | (p7 & p6 & p5 & p4 & p3 & p2 & g1) | (p7 & p6 & p5 & p4 & p3 & p2 & p1 & g0) | (p7 & p6 & p5 & p4 & p3 & p2 & p1 & p0 & cin);
 
 assign R[0] = p0 ^ c0;
 assign R[1] = p1 ^ c1;
@@ -45,6 +44,5 @@ assign R[4] = p4 ^ c4;
 assign R[5] = p5 ^ c5;
 assign R[6] = p6 ^ c6;
 assign R[7] = p7 ^ c7;
-assign cout = c8;
 
 endmodule

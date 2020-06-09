@@ -48,8 +48,8 @@ module RAM (
 	q_a,
 	q_b);
 
-	input	[15:0]  address_a;
-	input	[15:0]  address_b;
+	input	[10:0]  address_a;
+	input	[10:0]  address_b;
 	input	  clock;
 	input	[15:0]  data_a;
 	input	[15:0]  data_b;
@@ -103,11 +103,11 @@ module RAM (
 		altsyncram_component.clock_enable_output_a = "BYPASS",
 		altsyncram_component.clock_enable_output_b = "BYPASS",
 		altsyncram_component.indata_reg_b = "CLOCK0",
-		altsyncram_component.init_file = "./Test Programs/traverse_linked_list.mif",
+		altsyncram_component.init_file = "./Test Programs/Fib5.mif",
 		altsyncram_component.intended_device_family = "Cyclone V",
 		altsyncram_component.lpm_type = "altsyncram",
-		altsyncram_component.numwords_a = 65536,
-		altsyncram_component.numwords_b = 65536,
+		altsyncram_component.numwords_a = 2048,
+		altsyncram_component.numwords_b = 2048,
 		altsyncram_component.operation_mode = "BIDIR_DUAL_PORT",
 		altsyncram_component.outdata_aclr_a = "NONE",
 		altsyncram_component.outdata_aclr_b = "NONE",
@@ -117,8 +117,8 @@ module RAM (
 		altsyncram_component.read_during_write_mode_mixed_ports = "DONT_CARE",
 		altsyncram_component.read_during_write_mode_port_a = "NEW_DATA_NO_NBE_READ",
 		altsyncram_component.read_during_write_mode_port_b = "NEW_DATA_NO_NBE_READ",
-		altsyncram_component.widthad_a = 16,
-		altsyncram_component.widthad_b = 16,
+		altsyncram_component.widthad_a = 11,
+		altsyncram_component.widthad_b = 11,
 		altsyncram_component.width_a = 16,
 		altsyncram_component.width_b = 16,
 		altsyncram_component.width_byteena_a = 1,
@@ -161,9 +161,9 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MEMSIZE NUMERIC "1048576"
+// Retrieval info: PRIVATE: MEMSIZE NUMERIC "32768"
 // Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "./Test Programs/traverse_linked_list.mif"
+// Retrieval info: PRIVATE: MIFfilename STRING "./Test Programs/Fib5.mif"
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "3"
 // Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "0"
@@ -197,11 +197,11 @@ endmodule
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
 // Retrieval info: CONSTANT: INDATA_REG_B STRING "CLOCK0"
-// Retrieval info: CONSTANT: INIT_FILE STRING "./Test Programs/traverse_linked_list.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "./Test Programs/Fib5.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
-// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "65536"
-// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "65536"
+// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "2048"
+// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "2048"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "BIDIR_DUAL_PORT"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
@@ -211,15 +211,15 @@ endmodule
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "NEW_DATA_NO_NBE_READ"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_B STRING "NEW_DATA_NO_NBE_READ"
-// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "16"
-// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "16"
+// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "11"
+// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "11"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "16"
 // Retrieval info: CONSTANT: WIDTH_B NUMERIC "16"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_B NUMERIC "1"
 // Retrieval info: CONSTANT: WRCONTROL_WRADDRESS_REG_B STRING "CLOCK0"
-// Retrieval info: USED_PORT: address_a 0 0 16 0 INPUT NODEFVAL "address_a[15..0]"
-// Retrieval info: USED_PORT: address_b 0 0 16 0 INPUT NODEFVAL "address_b[15..0]"
+// Retrieval info: USED_PORT: address_a 0 0 11 0 INPUT NODEFVAL "address_a[10..0]"
+// Retrieval info: USED_PORT: address_b 0 0 11 0 INPUT NODEFVAL "address_b[10..0]"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
 // Retrieval info: USED_PORT: data_a 0 0 16 0 INPUT NODEFVAL "data_a[15..0]"
 // Retrieval info: USED_PORT: data_b 0 0 16 0 INPUT NODEFVAL "data_b[15..0]"
@@ -227,8 +227,8 @@ endmodule
 // Retrieval info: USED_PORT: q_b 0 0 16 0 OUTPUT NODEFVAL "q_b[15..0]"
 // Retrieval info: USED_PORT: wren_a 0 0 0 0 INPUT GND "wren_a"
 // Retrieval info: USED_PORT: wren_b 0 0 0 0 INPUT GND "wren_b"
-// Retrieval info: CONNECT: @address_a 0 0 16 0 address_a 0 0 16 0
-// Retrieval info: CONNECT: @address_b 0 0 16 0 address_b 0 0 16 0
+// Retrieval info: CONNECT: @address_a 0 0 11 0 address_a 0 0 11 0
+// Retrieval info: CONNECT: @address_b 0 0 11 0 address_b 0 0 11 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 // Retrieval info: CONNECT: @data_a 0 0 16 0 data_a 0 0 16 0
 // Retrieval info: CONNECT: @data_b 0 0 16 0 data_b 0 0 16 0

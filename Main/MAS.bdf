@@ -118,7 +118,7 @@ https://fpgasoftware.intel.com/eula.
 )
 (pin
 	(output)
-	(rect 1096 408 1272 424)
+	(rect 1192 408 1368 424)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "MAS_out[15..0]" (rect 90 0 165 12)(font "Arial" ))
 	(pt 0 8)
@@ -282,7 +282,7 @@ https://fpgasoftware.intel.com/eula.
 	(annotation_block (parameter)(rect 832 368 952 406))
 )
 (symbol
-	(rect 928 384 1096 464)
+	(rect 984 384 1152 464)
 	(text "carry_look_ahead_adder" (rect 5 0 125 12)(font "Arial" ))
 	(text "inst1" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
@@ -312,8 +312,8 @@ https://fpgasoftware.intel.com/eula.
 )
 (symbol
 	(rect 720 312 888 392)
-	(text "new_quick_multiply_16" (rect 5 0 118 12)(font "Arial" ))
-	(text "inst" (rect 8 64 25 76)(font "Arial" ))
+	(text "new_quick_multiply" (rect 5 0 100 12)(font "Arial" ))
+	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -417,22 +417,7 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 904 416)
-	(pt 928 416)
-	(bus)
-)
-(connector
 	(pt 832 456)
-	(pt 904 456)
-	(bus)
-)
-(connector
-	(pt 904 432)
-	(pt 928 432)
-	(bus)
-)
-(connector
-	(pt 904 432)
 	(pt 904 456)
 	(bus)
 )
@@ -471,12 +456,32 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 904 416)
 	(pt 904 344)
+	(pt 888 344)
+	(bus)
+)
+(connector
+	(pt 904 456)
+	(pt 904 432)
 	(bus)
 )
 (connector
 	(pt 904 344)
-	(pt 888 344)
+	(pt 904 416)
+	(bus)
+)
+(connector
+	(pt 1192 416)
+	(pt 1152 416)
+	(bus)
+)
+(connector
+	(pt 904 416)
+	(pt 984 416)
+	(bus)
+)
+(connector
+	(pt 904 432)
+	(pt 984 432)
 	(bus)
 )

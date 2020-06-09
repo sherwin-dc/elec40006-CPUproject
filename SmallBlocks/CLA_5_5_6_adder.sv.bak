@@ -1,0 +1,12 @@
+module cLA_5_5_6_adder
+(
+input [15:0] A, B,
+input cin,
+output [15:0] R
+
+);
+
+wire c1, c2;
+
+carry_look_ahead_adder_cin_cout_5 CLA1(.A(A[15:11]) , .B(B[15:11]) , .cin(cin) , .cout(c1) , .R(R[15:11]));
+endmodule

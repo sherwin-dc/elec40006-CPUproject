@@ -12,8 +12,8 @@ wire [2:0] opcode = { instr_bit_15 , instr_bit_12_11[1:0] };
 reg [15:0] alusum, A, B, Addout, Subout;
 assign aluout = alusum;
 
-alt_carry_look_ahead_adder_cin adder(.A(A), .B(B), .cin(1'b0), .R(Addout));
-alt_carry_look_ahead_adder_cin subber(.A(A), .B(~B), .cin(1'b1), .R(Subout));
+adder_to_use_16_bit adder(.A(A), .B(B), .cin(1'b0), .R(Addout));
+adder_to_use_16_bit subber(.A(A), .B(~B), .cin(1'b1), .R(Subout));
 
 
 always @(*)

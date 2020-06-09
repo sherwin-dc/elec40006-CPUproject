@@ -39,7 +39,7 @@ ir = 2'b00;
 		end
 
 		10'b00001xxxxx: // CALL
-		begin 
+		begin
 			o = 12'b000101001x00;
 			giantmux_sel = 3'b001; // PC
 			instr_addr1 = N;
@@ -128,22 +128,22 @@ ir = 2'b00;
 			giantmux_sel = 3'b100; // aluout
 		end 
 
-		10'b01010xxx1x: // SUB R, jump cond failed
-		begin 
-			if(jmp) begin //passed jump
-				o = 12'b000100001x00;
-				instr_addr1 = pc + instr[0] + 1'd1;
-				instr_addr2 = pc + instr[0] + 2'd2;
-				new_pc = pc + instr[0] + 2'd2;
-				giantmux_sel = 3'b100; // aluout
-			end else begin //failed jump
-				o = 12'b000100010x00;
-				instr_addr1 = pc;
-				instr_addr2 = pc + 1'd1;
-				giantmux_sel = 3'b100; // aluout
-			end
-			
-		end
+//		10'b01010xxx1x: // SUB R, jump cond failed
+//		begin 
+//			if(jmp) begin //passed jump
+//				o = 12'b000100001x00;
+//				instr_addr1 = pc + instr[0] + 1'd1;
+//				instr_addr2 = pc + instr[0] + 2'd2;
+//				new_pc = pc + instr[0] + 2'd2;
+//				giantmux_sel = 3'b100; // aluout
+//			end else begin //failed jump
+//				o = 12'b000100010x00;
+//				instr_addr1 = pc;
+//				instr_addr2 = pc + 1'd1;
+//				giantmux_sel = 3'b100; // aluout
+//			end
+//			
+//		end
 
 
 		10'b01011xxx0x: // SUB I, no jump cond
@@ -155,23 +155,23 @@ ir = 2'b00;
 			giantmux_sel = 3'b100; // aluout
 		end 
 
-		10'b01011xxx1x: // SUB I, jump cond failed
-		begin
-			if(jmp) begin //passed jump
-				o = 12'b000100001x00;
-				instr_addr1 = pc + instr[0] + 2'd2;
-				instr_addr2 = pc + instr[0] + 2'd3;
-				new_pc = pc + instr[0] + 2'd3;
-				giantmux_sel = 3'b100; // aluout
-			end else begin //failed jump
-				o = 12'b000100001x00;
-				instr_addr1 = pc + 1'd1;
-				instr_addr2 = pc + 2'd2;
-				new_pc = pc + 2'd2;
-				giantmux_sel = 3'b100; // aluout
-			end
-			
-		end 
+//		10'b01011xxx1x: // SUB I, jump cond failed
+//		begin
+//			if(jmp) begin //passed jump
+//				o = 12'b000100001x00;
+//				instr_addr1 = pc + instr[0] + 2'd2;
+//				instr_addr2 = pc + instr[0] + 2'd3;
+//				new_pc = pc + instr[0] + 2'd3;
+//				giantmux_sel = 3'b100; // aluout
+//			end else begin //failed jump
+//				o = 12'b000100001x00;
+//				instr_addr1 = pc + 1'd1;
+//				instr_addr2 = pc + 2'd2;
+//				new_pc = pc + 2'd2;
+//				giantmux_sel = 3'b100; // aluout
+//			end
+//			
+//		end 
 
 
 		10'b0110xxxxxx: // MAS R and/or I
@@ -179,8 +179,17 @@ ir = 2'b00;
 			o = {7'b0001000, !instr[11], instr[11], 3'bx00};
 			instr_addr1 = pc + instr[11];
 			instr_addr2 = pc + instr[11] + 1'd1;
-			new_pc = pc + 2'd2;
+			new_pc = pc + instr[11] + 1'd1;
 			giantmux_sel = 3'b101; // masout
+		end 
+		
+		10'b0011xxxxxx: // MUL R and/or I
+		begin 
+			o = {7'b0000000, !instr[11], instr[11], 3'bx00};
+			instr_addr1 = pc + instr[11];
+			instr_addr2 = pc + instr[11] + 1'd1;
+			new_pc = pc + instr[11] + 1'd1;
+			
 		end 
 
 		10'b0111xxxxxx: // MOV R and/or I
@@ -188,7 +197,7 @@ ir = 2'b00;
 			o = {7'b0001000, !instr[11], instr[11], 3'bx00};
 			instr_addr1 = pc + instr[11];
 			instr_addr2 = pc + instr[11] + 1'd1;
-			new_pc = pc + 2'd2;
+			new_pc = pc + instr[11] + 1'd1;
 			giantmux_sel = {1'b0, instr[11], 1'b0}; // rsdata = 000, N = 010
 		end
 
