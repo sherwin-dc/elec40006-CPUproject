@@ -28,7 +28,9 @@ class synthesizer {
     void JMP();
     void ADD();
     void SUB();
-    void MAS();
+    void MUL();
+    void MAS2();
+    void MAS(); //deprecated
     void MOV();
     void SET();
     void PLD();
@@ -119,8 +121,11 @@ void synthesizer::runSynthesis()  {
     else if(tmp[1]=="sub") {
       SUB();
     }
+    else if(tmp[1]=="mul")  {
+      MUL();
+    }
     else if(tmp[1]=="mas") {
-      MAS();
+      MAS2();
     }
     else if(tmp[1]=="mov") {
       MOV();
@@ -656,7 +661,153 @@ void synthesizer::SUB() {
   }
 }
 
-void synthesizer::MAS()  {
+void synthesizer::MUL() {
+  if(tmp.size()<4)  {
+    cerr<<"Syntax Error for MUL at line "<<tmp[0]<<endl;
+    exit(1);
+  }
+  opcodeh=3;
+  if(tmp[3].find("#")!=string::npos)  {
+    tir=1;
+  }
+  else  {
+    tir=0;
+  }
+
+  if(tmp[2].find("r")!=string::npos)  {
+    tmp[2]=tmp[2].substr(1,tmp[2].length()-1);
+  }
+  try {
+    rd=stoi(tmp[2]);
+    if(rd>7)  {
+      cerr<<"Invalid register selected for Rd at line "<<tmp[0]<<endl;
+      exit(1);
+    }
+  }
+  catch(...)  {
+    cerr<<"Syntax Error for MUL at line "<<tmp[0]<<endl;
+    exit(1);
+  }
+
+  int p=0;
+  if(tmp.size()>4)  {
+    if(tmp[4]=="pm")  {
+      p=1;
+    }
+  }
+
+  if(tir) {
+    try {
+      tmp[3]=tmp[3].substr(1);
+      operand=stoi(tmp[3]);
+      operand=operand&65535;
+    }
+    catch(...)  {
+      cerr<<"Invalid value for operand in MUL at line "<<tmp[0]<<endl;
+      exit(1);
+    }
+    instr=(opcodeh<<12)+(tir<<11)+(rd<<8)+(p<<4);
+    instrWord=to_string(instr);
+    appendObjCode(instrWord);
+    appendObjCode(to_string(operand));
+    return;
+  }
+  else  {
+    if(tmp[3].find("r")!=string::npos)  {
+      tmp[3]=tmp[3].substr(1,tmp[3].length()-1);
+    }
+    try {
+      rs=stoi(tmp[3]);
+      if(rs>7)  {
+        cerr<<"Invalid register selected for Rs at line "<<tmp[0]<<endl;
+        exit(1);
+      }
+    }
+    catch(...)  {
+      cerr<<"Syntax Error for MUL at line "<<tmp[0]<<endl;
+      exit(1);
+    }
+    instr=(opcodeh<<12)+(tir<<11)+(rd<<8)+(rs<<5)+(p<<4);
+    instrWord=to_string(instr);
+    appendObjCode(instrWord);
+    return;
+  }
+}
+
+void synthesizer::MAS2()  {
+  if(tmp.size()<4)  {
+    cerr<<"Syntax Error for MAS at line "<<tmp[0]<<endl;
+    exit(1);
+  }
+  opcodeh=6;
+  if(tmp[2].find("r")!=string::npos)  {
+    tmp[2]=tmp[2].substr(1,tmp[2].length()-1);
+  }
+  try {
+    rd=stoi(tmp[2]);
+    if(rd>7)  {
+      cerr<<"Invalid register selected for Rd at line "<<tmp[0]<<endl;
+      exit(1);
+    }
+  }
+  catch(...)  {
+    cerr<<"Syntax Error for MAS at line "<<tmp[0]<<endl;
+    exit(1);
+  }
+
+  if(tmp[3].find("#")!=string::npos)  {
+    tir=1;
+  }
+  else  {
+    tir=0;
+  }
+
+  if(tir) {
+    try {
+      tmp[3]=tmp[3].substr(1);
+      operand=stoi(tmp[3]);
+      operand=operand&65535;
+    }
+    catch(...)  {
+      cerr<<"Invalid value for operand in MAS at line "<<tmp[0]<<endl;
+      exit(1);
+    }
+    instr=(opcodeh<<12)+(tir<<11)+(rd<<8);
+    instrWord=to_string(instr);
+    appendObjCode(instrWord);
+    appendObjCode(to_string(operand));
+    return;
+  }
+  else  {
+    if(tmp[3].find("r")!=string::npos)  {
+      tmp[3]=tmp[3].substr(1,tmp[3].length()-1);
+    }
+    try {
+      rs=stoi(tmp[3]);
+      if(rs>7)  {
+        cerr<<"Invalid register selected for Rs at line "<<tmp[0]<<endl;
+        exit(1);
+      }
+    }
+    catch(...)  {
+      cerr<<"Syntax Error for MAS at line "<<tmp[0]<<endl;
+      exit(1);
+    }
+
+    int as=0;
+    if(tmp.size()>4)  {
+      if(tmp[4]=="s") {
+        as=1;
+      }
+    }
+    instr=(opcodeh<<12)+(tir<<11)+(rd<<8)+(rs<<5)+(as<<4);
+    instrWord=to_string(instr);
+    appendObjCode(instrWord);
+    return;
+  }
+}
+
+void synthesizer::MAS()  {  //deprecated
   if(tmp.size()<5)  {
     cerr<<"Syntax Error for MAS at line "<<tmp[0]<<endl;
     exit(1);
