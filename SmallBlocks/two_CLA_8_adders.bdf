@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -40 104 128 120)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "In_A[15..0]" (rect 5 0 60 12)(font "Arial" ))
+	(text "In_A[15..0]" (rect 5 0 59 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -40,7 +40,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -40 152 128 168)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "In_B[15..0]" (rect 5 0 56 17)(font "Intel Clear" ))
+	(text "In_B[15..0]" (rect 5 0 55 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 192 120 208)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "c_in" (rect 5 0 26 12)(font "Arial" ))
+	(text "c_in" (rect 5 0 25 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -85,8 +85,25 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
+	(rect 392 288 424 320)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst3" (rect 3 21 25 38)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
 	(rect 224 72 384 184)
-	(text "carry_look_ahead_adder_cin8" (rect 5 0 151 12)(font "Arial" ))
+	(text "carry_look_ahead_adder_cin_cout_8" (rect 5 0 184 12)(font "Arial" ))
 	(text "inst" (rect 8 96 25 108)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -129,8 +146,8 @@ https://fpgasoftware.intel.com/eula.
 )
 (symbol
 	(rect 224 232 384 344)
-	(text "carry_look_ahead_adder_cin8" (rect 5 0 151 12)(font "Arial" ))
-	(text "inst1" (rect 8 96 30 113)(font "Intel Clear" ))
+	(text "carry_look_ahead_adder_cin_cout_8" (rect 5 0 184 12)(font "Arial" ))
+	(text "inst2" (rect 8 96 30 113)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -170,23 +187,6 @@ https://fpgasoftware.intel.com/eula.
 		(rectangle (rect 16 16 144 96))
 	)
 )
-(symbol
-	(rect 392 288 424 320)
-	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
-	(text "inst3" (rect 3 21 25 38)(font "Intel Clear" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16))
-		(line (pt 16 16)(pt 24 8))
-		(line (pt 8 8)(pt 24 8))
-	)
-)
 (connector
 	(text "InB[15..0]" (rect 128 144 172 161)(font "Intel Clear" ))
 	(pt 128 160)
@@ -197,47 +197,6 @@ https://fpgasoftware.intel.com/eula.
 	(text "InA[15..0]" (rect 128 96 172 113)(font "Intel Clear" ))
 	(pt 128 112)
 	(pt 152 112)
-	(bus)
-)
-(connector
-	(text "InA[15..8]" (rect 200 88 244 105)(font "Intel Clear" ))
-	(pt 224 104)
-	(pt 200 104)
-	(bus)
-)
-(connector
-	(text "InB[15..8]" (rect 200 104 244 121)(font "Intel Clear" ))
-	(pt 224 120)
-	(pt 200 120)
-	(bus)
-)
-(connector
-	(text "InA[7..0]" (rect 192 248 230 265)(font "Intel Clear" ))
-	(pt 224 264)
-	(pt 192 264)
-	(bus)
-)
-(connector
-	(text "InB[7..0]" (rect 192 264 230 281)(font "Intel Clear" ))
-	(pt 224 280)
-	(pt 192 280)
-	(bus)
-)
-(connector
-	(text "O_1[7..0]" (rect 384 88 427 105)(font "Intel Clear" ))
-	(pt 384 104)
-	(pt 416 104)
-	(bus)
-)
-(connector
-	(text "O_2[7..0]" (rect 394 248 437 265)(font "Intel Clear" ))
-	(pt 384 264)
-	(pt 424 264)
-	(bus)
-)
-(connector
-	(pt 424 264)
-	(pt 424 256)
 	(bus)
 )
 (connector
@@ -285,4 +244,45 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 200 136)
 	(pt 200 200)
+)
+(connector
+	(text "InA[7..0]" (rect 192 88 230 105)(font "Intel Clear" ))
+	(pt 224 104)
+	(pt 192 104)
+	(bus)
+)
+(connector
+	(text "InB[7..0]" (rect 192 104 230 121)(font "Intel Clear" ))
+	(pt 224 120)
+	(pt 192 120)
+	(bus)
+)
+(connector
+	(text "InA[15..8]" (rect 200 248 244 265)(font "Intel Clear" ))
+	(pt 224 264)
+	(pt 200 264)
+	(bus)
+)
+(connector
+	(text "InB[15..8]" (rect 200 264 244 281)(font "Intel Clear" ))
+	(pt 224 280)
+	(pt 200 280)
+	(bus)
+)
+(connector
+	(text "O_2[7..0]" (rect 394 88 437 105)(font "Intel Clear" ))
+	(pt 384 104)
+	(pt 424 104)
+	(bus)
+)
+(connector
+	(pt 424 104)
+	(pt 424 96)
+	(bus)
+)
+(connector
+	(text "O_1[7..0]" (rect 384 248 427 265)(font "Intel Clear" ))
+	(pt 384 264)
+	(pt 416 264)
+	(bus)
 )

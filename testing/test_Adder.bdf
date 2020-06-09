@@ -231,8 +231,8 @@ https://fpgasoftware.intel.com/eula.
 )
 (symbol
 	(rect 648 264 824 360)
-	(text "two_CLA_8_adders" (rect 5 0 120 19)(font "Intel Clear" (font_size 8)))
-	(text "inst1" (rect 8 75 30 92)(font "Intel Clear" ))
+	(text "two_CLA_8_adders_optimised" (rect 5 0 187 19)(font "Intel Clear" (font_size 8)))
+	(text "inst7" (rect 8 75 30 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
