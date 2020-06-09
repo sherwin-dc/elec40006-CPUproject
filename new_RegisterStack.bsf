@@ -1,0 +1,121 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 80 352 416)
+	(text "new_RegisterStack" (rect 8 8 111 27)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 16 312 32 329)(font "Intel Clear" ))
+	(port
+		(pt 0 248)
+		(input)
+		(text "Clock" (rect 0 -16 31 3)(font "Intel Clear" (font_size 8)))
+		(text "Clock" (rect 21 243 52 262)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 248)(pt 16 248))
+	)
+	(port
+		(pt 0 264)
+		(input)
+		(text "Move_FP" (rect 0 -16 54 3)(font "Intel Clear" (font_size 8)))
+		(text "Move_FP" (rect 21 259 75 278)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 264)(pt 16 264))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "Rd_wen" (rect 0 -16 47 3)(font "Intel Clear" (font_size 8)))
+		(text "Rd_wen" (rect 21 75 68 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Rd[2..0]" (rect 0 -16 47 3)(font "Intel Clear" (font_size 8)))
+		(text "Rd[2..0]" (rect 21 43 68 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "Rs_wen" (rect 0 -16 44 3)(font "Intel Clear" (font_size 8)))
+		(text "Rs_wen" (rect 21 155 65 174)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Rd_data[15..0]" (rect 0 -16 89 3)(font "Intel Clear" (font_size 8)))
+		(text "Rd_data[15..0]" (rect 21 59 110 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "Rs_data[15..0]" (rect 0 -16 87 3)(font "Intel Clear" (font_size 8)))
+		(text "Rs_data[15..0]" (rect 21 139 108 158)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "Rs[2..0]" (rect 0 -16 44 3)(font "Intel Clear" (font_size 8)))
+		(text "Rs[2..0]" (rect 21 123 65 142)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "Push_up" (rect 0 -16 50 3)(font "Intel Clear" (font_size 8)))
+		(text "Push_up" (rect 21 275 71 294)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 280)(pt 16 280))
+	)
+	(port
+		(pt 0 200)
+		(input)
+		(text "Rm[2..0]" (rect 0 -16 50 3)(font "Intel Clear" (font_size 8)))
+		(text "Rm[2..0]" (rect 21 195 71 214)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 200)(pt 16 200)(line_width 3))
+	)
+	(port
+		(pt 288 48)
+		(output)
+		(text "Rd_out[15..0]" (rect 64 -16 145 3)(font "Intel Clear" (font_size 8)))
+		(text "Rd_out[15..0]" (rect 186 43 267 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 288 48)(pt 272 48)(line_width 3))
+	)
+	(port
+		(pt 288 128)
+		(output)
+		(text "Rs_out[15..0]" (rect 64 -16 143 3)(font "Intel Clear" (font_size 8)))
+		(text "Rs_out[15..0]" (rect 188 123 267 142)(font "Intel Clear" (font_size 8)))
+		(line (pt 288 128)(pt 272 128)(line_width 3))
+	)
+	(port
+		(pt 288 200)
+		(output)
+		(text "Rm_out[15..0]" (rect 64 -16 148 3)(font "Intel Clear" (font_size 8)))
+		(text "Rm_out[15..0]" (rect 183 195 267 214)(font "Intel Clear" (font_size 8)))
+		(line (pt 288 200)(pt 272 200)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 32 272 304))
+	)
+)
