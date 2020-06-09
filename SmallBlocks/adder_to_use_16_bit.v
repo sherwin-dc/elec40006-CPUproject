@@ -8,7 +8,7 @@ input cin
 );
 
 
-alt_carry_look_ahead_adder_cin Adder(.A(A) , .B(B) , .cin(cin) , .R(R));
+Simple16add Adder(.A(A) , .B(B) , .cin(cin) , .R(R));
 
 
 endmodule

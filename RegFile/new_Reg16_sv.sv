@@ -43,12 +43,12 @@ always @(posedge Clock) begin
         if(Rd_Wen) begin
             // If Push_Up is 1, then need to add to ReadReg Addr
             if(FP_push_up) begin
-                if(Actual_Rd[2:0] + Actual_Rs[2:0] <= 4'd7) begin
-                    MoveFP_Reg_addr[2:0] = Actual_Rd[2:0] + Actual_Rs[2:0];
-                    ReadReg[MoveFP_Reg_addr] <= Rd_Data;
-                    // send register to output on posedge clock
-                    // window_out[MoveFP_Reg_addr] = ReadReg[MoveFP_Reg_addr];
-                end
+                // if(Actual_Rd[2:0] + Actual_Rs[2:0] <= 4'd7) begin
+                //     MoveFP_Reg_addr[2:0] = Actual_Rd[2:0] + Actual_Rs[2:0];
+                //     ReadReg[MoveFP_Reg_addr] <= Rd_Data;
+                //     // send register to output on posedge clock
+                //     // window_out[MoveFP_Reg_addr] = ReadReg[MoveFP_Reg_addr];
+                // end
             end else begin
                 if(Actual_Rd[2:0] >= Actual_Rs[2:0]) begin
                     MoveFP_Reg_addr[2:0] = Actual_Rd[2:0] - Actual_Rs[2:0];
