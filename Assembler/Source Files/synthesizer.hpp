@@ -378,13 +378,13 @@ void synthesizer::CMP() {
     cond=3;
   }
   else if(tmp[4]=="ez") {
-    cond==4;
+    cond=4;
   }
   else if(tmp[4]=="mi") {
-    cond==5;
+    cond=5;
   }
   else if(tmp[4]=="np") {
-    cond==6;
+    cond=6;
   }
   else  {
     cerr<<"Invalid COND in CMP at line "<<tmp[0]<<endl;

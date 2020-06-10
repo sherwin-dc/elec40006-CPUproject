@@ -1,0 +1,3 @@
+CMP R3 R3 LS 1
+CMP R3 #3 LS 1
+STP
