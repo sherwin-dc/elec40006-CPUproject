@@ -1,0 +1,26 @@
+DEPTH = 65536;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+[0..ffff]: 0;
+0 : b80d;
+1 : 1;
+2 : 814c;
+3 : 7b00;
+4 : 2;
+5 : bb6d;
+6 : 1;
+7 : 838c;
+8 : 3420;
+9 : 6440;
+a : 4010;
+b : 5b60;
+c : 1;
+d : 1361;
+e : 2800;
+f : 8;
+10 : 7000;
+11 : f800;
+END
