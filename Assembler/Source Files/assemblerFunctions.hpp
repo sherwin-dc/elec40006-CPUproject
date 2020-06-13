@@ -122,4 +122,18 @@ return;
 }
 
 
+void printHelp()  {
+  cout<<"assemble INPUT FILE [OPTIONS]"<<endl<<endl;
+  cout<<"INPUT FILE - assembly program file"<<endl<<endl;
+  cout<<"-o   specify name of output file"<<endl;
+  cout<<"-d   set number of words in memory (DEC)"<<endl;
+  cout<<"-w   set width of each word in bits"<<endl;
+  cout<<"-f   set type of file to generate"<<endl;
+  cout<<"     Output file types:"<<endl;
+  cout<<"       - mif (Memory Initilization File)"<<endl;
+  cout<<"       - smf (Simulation Memory File)"<<endl;
+  cout<<"-h   display help"<<endl<<endl;
+}
+
+
 #endif

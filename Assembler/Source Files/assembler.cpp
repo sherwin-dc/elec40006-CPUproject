@@ -10,6 +10,10 @@ int main(int argc, char** argv) {
   }
 
   string inputFile=argv[1];
+  if(inputFile=="-h"||inputFile=="--help")  {
+    printHelp();
+    return 0;
+  }
   ifstream infile;
   try {
     infile.open(inputFile);
@@ -59,6 +63,10 @@ int main(int argc, char** argv) {
           fileExtension=".smf";
         }
         continue;
+      }
+      else if(arg=="-h"||arg=="--help") {
+        printHelp();
+        return 0;
       }
     }
   }
