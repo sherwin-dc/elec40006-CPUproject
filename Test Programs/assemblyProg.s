@@ -1,0 +1,3 @@
+MOV R0 #3
+JMP p0
+STP

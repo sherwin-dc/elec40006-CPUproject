@@ -13,6 +13,7 @@ using namespace std;
 void stringRemoveChar(string *instring, string rmchar);
 vector<vector<string>> parseFile(ifstream &infile);
 void generateMIF(const vector<vector<string>> &objcode, string filename="out.mif", int depth=65536, int width=16);
+void generateSimMemFile(const vector<vector<string>> &objcode, string filename="out.smf", int depth=65536, int width=16);
 
 
 void stringRemoveChar(string *instring, string rmchar) {
@@ -72,7 +73,7 @@ vector<vector<string>> parseFile(ifstream &infile)  {
 }
 
 
-void generateMIF(const vector<vector<string>> &inobj, string filename, int depth, int width)  {
+void generateMIF(const vector<vector<string>> &inobj, string filename, long depth, long width)  {
   ofstream outputFile{filename};
   outputFile<<"DEPTH = "<<to_string(depth)<<";"<<endl;
   outputFile<<"WIDTH = "<<to_string(width)<<";"<<endl;
@@ -108,6 +109,16 @@ void generateMIF(const vector<vector<string>> &inobj, string filename, int depth
   }
   outputFile<<"END"<<endl;
   return;
+}
+
+
+void generateSimMemFile(const vector<vector<string>> &objcode, string filename, int depth, int width)  {
+  ofstream outputFile{filename};
+  outputFile<<"DEPTH="<<depth<<endl;
+  for(int i=0;i<objcode.size();i++) {
+    outputFile<<objcode[i][0]<<" "<<objcode[i][1]<<endl;
+  }
+return;
 }
 
 
