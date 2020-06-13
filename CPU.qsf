@@ -138,7 +138,7 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 # --------------------
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform9.vwf
 
-set_global_assignment -name POWER_USE_INPUT_FILES OFF
+set_global_assignment -name POWER_USE_INPUT_FILES ON
 set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE 12.5%
 set_global_assignment -name BDF_FILE testing/test_Adder.bdf
 set_global_assignment -name VERILOG_FILE SmallBlocks/alt_carry_look_ahead_adder_cin7.v
