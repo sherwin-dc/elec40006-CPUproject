@@ -184,7 +184,6 @@ void CPU::NOP() {
 void CPU::CALL()  {
   op="CALL";
   type="I";
-  cout<<int(rs)<<endl;
   regfile.writeRegister(rd,pc+1);
   addrA=n;
   addrB=n+1;
