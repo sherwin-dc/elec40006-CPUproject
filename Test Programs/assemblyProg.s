@@ -1,3 +1,5 @@
-MOV R0 #3
-JMP p0
+MOV R1 #3
+MOV R2 #5
+MUL R1 R2
+MAS R0 #2
 STP
