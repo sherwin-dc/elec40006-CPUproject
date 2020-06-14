@@ -2,12 +2,13 @@ module ALU_new
 (
 	input [15:0] rsdata, rmdata, N,
 	input instr_bit_15, 
+	input instr_bit_4,
 	input [1:0] instr_bit_12_11,
 	output [15:0] aluout
 );
 
 
-wire [2:0] opcode = { instr_bit_15 , instr_bit_12_11[1:0] };
+wire [3:0] opcode = { instr_bit_15 , instr_bit_12_11[1:0] , instr_bit_4};
 
 reg [15:0] alusum, A, B, Addout, Subout;
 assign aluout = alusum;
@@ -21,29 +22,32 @@ always @(*)
 	A = rsdata;
 	B = 16'd0;
 	
-		case (opcode)
-			3'b000 : begin // ADD R
+		casex (opcode)
+			4'b000x : begin // ADD R
 			B = rmdata;
 			alusum = Addout; 
 			end
 			
-			3'b001 : begin// ADD I
+			4'b001x : begin// ADD I
 			B = N;
 			alusum = Addout; 
 			end
 			
-			3'b010 : begin// SUB R
+			4'b010x : begin// SUB R
 			B = rmdata;
 			alusum = Subout; 
 			end
 			
-			3'b011 : begin// SUB I
+			4'b011x : begin// SUB I
 			B = N;
 			alusum = Subout; 
 			end
 			
-			3'b100 : alusum = {rsdata[14:0], 1'b0}; // LSL
-			3'b110 : alusum = {1'b0, rsdata[15:1]}; // LSR
+			
+			
+			4'b100x : alusum = {rsdata[14:0], 1'b0}; // LSL
+			4'b1100 : alusum = {1'b0, rsdata[15:1]}; // LSR
+			4'b1101 : alusum = {rsdata[15], rsdata[15:1]}; // ASR
 					
 			default : alusum = 0;
 		endcase
